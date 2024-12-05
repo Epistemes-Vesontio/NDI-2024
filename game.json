@@ -147,5 +147,117 @@
                 }
             ]
         }
+    },
+    {
+        "Coeur": {
+            "Questions" : [
+                {
+                    "Name": "Quels sont les conséquences de l'acidification des Océans ?",
+                    "Choix" : [
+                        {
+                            "Name": "La disparition des espèces marines",
+                            "Effects": [
+                                {
+                                    "Cle": "Biodiversité",
+                                    "Valeur": "8"
+                                },
+                                {
+                                    "Cle": "Santé des océans",
+                                    "Valeur": "10"
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "L'eau change de goût",
+                            "Effects": [
+                                {
+                                    "Cle": "Biodiversité",
+                                    "Valeur": "-7"
+                                },
+                                {
+                                    "Cle": "Santé des océans",
+                                    "Valeur": "-9"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Foie": {
+            "Questions": [
+                {
+                    "Name": "Quels sont les effets de la pollution par les hydrocarbures sur les océans ?",
+                    "Choix": [
+                        {
+                            "Name": "Formation de marées noires",
+                            "Effects": [
+                                {
+                                    "Cle": "Biodiversité",
+                                    "Valeur": "10"
+                                },
+                                {
+                                    "Cle": "Santé des océans",
+                                    "Valeur": "9"
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Contamination des habitats marins",
+                            "Effects": [
+                                {
+                                    "Cle": "Biodiversité",
+                                    "Valeur": "8"
+                                },
+                                {
+                                    "Cle": "Santé des océans",
+                                    "Valeur": "7"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+    },
+    {
+        "Reins": {
+            "Questions": [
+                {
+                    "Name": "Quels sont les effets de la pollution par les métaux lourds sur les océans ?",
+                    "Choix": [
+                        {
+                            "Name": "Accumulation de métaux lourds dans les organismes marins",
+                            "Effects": [
+                                {
+                                    "Cle": "Biodiversité",
+                                    "Valeur": "9"
+                                },
+                                {
+                                    "Cle": "Santé des océans",
+                                    "Valeur": "8"
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Perturbation des écosystèmes marins",
+                            "Effects": [
+                                {
+                                    "Cle": "Biodiversité",
+                                    "Valeur": "7"
+                                },
+                                {
+                                    "Cle": "Santé des océans",
+                                    "Valeur": "6"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }
