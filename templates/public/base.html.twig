@@ -43,12 +43,14 @@
             <a href="https://episteme-bde.fr" class="copy">
                 <p>Copyright © 2024 Episteme</p>
             </a>
+            <div id="ecoindex-badge"></div>
         </aside>
     </footer>
     {% block javascripts %}
         <script type="text/javascript" src="{{ asset('js/global/themes.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('js/global/app.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('js/public/base.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('js/public/ecoindex-badge.js') }}" defer></script>
         <script>
             document.addEventListener('DOMContentLoaded', async () => {
                 const locale = '{{ app.request.locale }}';
