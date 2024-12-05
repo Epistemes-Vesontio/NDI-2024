@@ -1,0 +1,35 @@
+.user-table {
+  border-collapse: collapse;
+  width: 90%;
+  background-color: var(--body-bg-color);
+  color: var(--body-text-color);
+}
+
+.user-table td, .user-table th {
+  border: 1px solid var(--footer-border-color);
+  padding: 8px;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: var(--footer-bg-color);
+}
+
+.user-table tr:hover {
+  background-color: var(--nav-hover-bg-color);
+}
+
+.user-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--button-bg-gradient-start);
+  color: var(--button-text-color);
+}
+
+.user-table .save-icon, .user-table .delete-icon {
+  margin: 0 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  fill: var(--link-color);
+}
+

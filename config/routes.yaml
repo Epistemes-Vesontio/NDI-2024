@@ -1,0 +1,16 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+    prefix: /{_locale}/
+    defaults:
+        _locale: 'fr'
+    requirements:
+        _locale: en|fr|de
+
+_locale_redirect:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+    defaults:
+        route: app_public_home
+        _locale: fr
+        permanent: true

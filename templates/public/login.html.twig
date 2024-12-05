@@ -1,0 +1,27 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}{{ 'public.login.authentication'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/public/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="login-container">
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ 'public.login.authentication_failed'|trans }}</div>
+        {% endif %}
+
+        <img src="{{ asset('img/Episteme_logo.png') }}" alt="Episteme logo">
+
+        <input type="text" value="{{ last_username }}" placeholder="{{ 'public.login.username'|trans }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+        <input type="password" placeholder="{{ 'public.login.password'|trans }}" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        <button type="submit">{{ 'public.login.signin'|trans }}</button>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        <p>{{ 'public.login.no_account'|trans }} <a href="">{{ 'public.login.signup'|trans }}</a></p>
+    </form>
+</div>
+{% endblock %}

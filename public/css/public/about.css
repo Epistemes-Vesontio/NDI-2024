@@ -1,0 +1,35 @@
+.users-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.user-container {
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px 6px var(--box-shadow-color);
+    background-color: var(--footer-bg-color);
+    width: 12rem;
+}
+
+.user-img {
+    border-radius: 1093px;
+    box-shadow: 0 4px 6px var(--box-shadow-color);
+}
+
+.user-name {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.user-name h3{
+    margin: 0;
+}
+
+#lastname{
+    text-transform:uppercase;
+}

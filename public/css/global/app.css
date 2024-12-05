@@ -1,0 +1,104 @@
+@font-face {
+  font-family: nasalization;
+  src: url("/fonts/nasalization/nasalization-rg.otf");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: nasalization;
+}
+
+/* home.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-bg-color);
+  color: var(--body-text-color);
+}
+
+/*Button setup */
+
+button, .button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--button-text-color);
+  background: linear-gradient(90deg, var(--button-bg-gradient-start), var(--button-bg-gradient-end));
+  border: none;
+  border-radius: 1093px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 8px var(--button-shadow-color);
+  transition: all 0.3s ease;
+  margin: 0.5rem 0;
+}
+
+button:hover, .button:hover {
+  background: linear-gradient(90deg, var(--button-hover-bg-gradient-start), var(--button-hover-bg-gradient-end));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px var(--button-shadow-color);
+  cursor: pointer;
+}
+
+/*text input*/
+
+
+form input {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 1093px;
+  border: 1px solid var(--select-focus-border-color);
+  box-shadow: 0 2px 4px var(--button-shadow-color);
+  background-color: var(--header-bg-color);
+  color: var(--body-text-color);
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input::placeholder {
+  color: var(--body-text-color);
+  opacity: 0.7;
+}
+
+
+/*alert div */
+
+.alert.alert-danger {
+  background-color: var(--alert-bg-color);
+  color: var(--alert-text-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--alert-border-color);
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+
+
+
+
+.theme-popup {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--body-bg-color);
+  color: var(--body-text-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s, transform 0.5s;
+  box-shadow: 4px 4px 4px 4px var(--box-shadow-color);
+}
+
+.theme-popup.fade-out {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-10px);
+}

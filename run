@@ -1,0 +1,21 @@
+#!/bin/sh
+
+CONTAINER_NAME="fl_website"
+LOCAL_DIR="$(pwd)"  
+CONTAINER_DIR="/var/www/"  
+
+echo "Stopping previous launcher (if any)..."
+docker rm -f ${CONTAINER_NAME} 2>/dev/null
+
+echo "Running Docker container..."
+docker run --add-host host.docker.internal:host-gateway \
+           -d --name $CONTAINER_NAME \
+           -e APP_ENV=prod \
+           -e APP_DEBUG=false \
+           -e ADMIN_PASSWORD=$ADMIN_PASSWORD \
+           -p 8080:80 \
+           -v ${LOCAL_DIR}:${CONTAINER_DIR} \
+           $CONTAINER_NAME
+
+echo "Fetching logs from the container..."
+docker logs -f $CONTAINER_NAME

@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: fr\n"
+"X-Version: 1.0.1\n"
+
+#. Ceci est un exemple de traduction singulier, pluriel
+msgid "You have one new message."
+msgid_plural "You have %count% new messages."
+msgstr[0] "Vous avez un nouveau message."
+msgstr[1] "Vous avez %count% nouveaux messages."
+
+#. Home Page
+msgid "public.home.home"
+msgstr "Accueil"
+
+#. Login Page
+msgid "public.login.username"
+msgstr "Nom d'utilisateur"
+
+msgid "public.login.password"
+msgstr "Mot de passe"
+
+msgid "public.login.signin"
+msgstr "Se connecter"
+
+msgid "public.login.signup"
+msgstr "S'inscrire"
+
+msgid "public.login.no_account"
+msgstr "Pas de compte ?"
+
+msgid "public.login.authentication"
+msgstr "Authentification"
+
+msgid "public.login.authentication_failed"
+msgstr "L'authentification a échoué"
+
+#. Nav bar 
+msgid "public.navbar.about_title"
+msgstr "À propos"
+
+msgid "public.navbar.contact_title"
+msgstr "Contactez-nous"
+
+msgid "public.navbar.clicker_title"
+msgstr "Cliqueur"
+
+#. Error Page
+msgid "an.error.has.occurred"
+msgstr "Une erreur est survenue"
+
+#. sideBar privé
+msgid "private.sidebar.signout"
+msgstr "Se déconnecter"
+
+msgid "private.sidebar.publicPage"
+msgstr "Page publique"
+
+msgid "private.sidebar.home"
+msgstr "Accueil"
+
+msgid "private.sidebar.admin"
+msgstr "Administration"
+
+
+msgid "front.theme_update"
+msgstr "Thème mis à jour"

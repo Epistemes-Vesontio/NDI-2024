@@ -1,0 +1,18 @@
+{% extends 'private/base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('css/private/home.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="side-container">
+        {{ include("private/components/fir.html.twig") }}
+    </div>
+
+{% endblock %}

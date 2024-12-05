@@ -1,0 +1,41 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}{{ 'public.navbar.clicker_title'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/public/clicker.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/public/clicker.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="game-container">
+        <div id="counters-container">
+            <div id="counter-container">Count: 0</div>
+            <div id="speed-container">Speed: 0</div>
+        </div>
+        <img id="click-image" src="{{ asset('img/profil/viennotdavyd.png') }}" alt="Click Me" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div id="shop-container">
+            <div class="shop-item" data-cost="10" data-name="Item 1">
+                <img src="{{ asset('img/profil/viennotdavyd.png') }}" alt="Item 1">
+                <div class="item-info">
+                    <span class="item-name">Item 1</span>
+                    <span class="item-cost">Cost: 10</span>
+                    <span class="item-count">Count: 0</span>
+                </div>
+            </div>
+            <div class="shop-item" data-cost="20" data-name="Item 2">
+                <img src="{{ asset('img/profil/viennotdavyd.png') }}" alt="Item 2">
+                <div class="item-info">
+                    <span class="item-name">Item 2</span>
+                    <span class="item-cost">Cost: 20</span>
+                    <span class="item-count">Count: 0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

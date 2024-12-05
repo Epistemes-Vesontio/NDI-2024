@@ -1,0 +1,29 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}{{ 'public.navbar.about_title'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/public/about.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+<div class="users-container">
+        {% for user in users %}
+            <div class="user-container">
+                <img width="100px" height="100px" src="{{ user.img }}" alt="{{ user.lastname }} {{ user.firstname }}'s Avatar" class="user-img">
+                <span class="user-name" >
+                    <h3 id="lastname">{{ user.lastname }}</h3>
+                    <h3 >{{ user.firstname }}</h3>
+                </span>
+                <a href="{{ user.link }}" class="button" target="_blank">{{user.buttonName}}</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

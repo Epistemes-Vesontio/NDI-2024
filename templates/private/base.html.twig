@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Episteme | {% block title %}{% endblock %}</title>
+        
+        <link rel="icon" href="{{ asset('img/Episteme_logo.png') }}">
+        <link rel="stylesheet" href="{{ asset('css/global/themes.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/global/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/private/base.css') }}">
+        {% block stylesheets %}
+        {% endblock %}
+
+    </head>
+    <body>
+
+        {% if app.user %}
+            <nav class="sidebar">
+                {{ include("private/partials/sidebar/sidebar.html.twig") }}
+            </nav>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="side-containers">
+        {% endif %}
+
+        {% block body %}
+        
+        {% endblock %}
+
+        {% if app.user %}
+            </div>
+        {% endif %}
+
+        {% block javascripts %}
+                <script type="text/javascript" src="{{ asset('js/global/themes.js') }}" defer></script>
+        {% endblock %}
+    </body>
+</html>

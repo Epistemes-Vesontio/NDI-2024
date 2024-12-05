@@ -1,0 +1,73 @@
+:root {
+    --header-bg-color: rgba(255, 255, 255, 0.8);
+    --header-text-color: black;
+    --nav-hover-bg-color: rgba(0, 0, 0, 0.1);
+    --nav-icon-fill: black;
+    --body-bg-color: #ffffff;
+    --body-text-color: black;
+    --footer-bg-color: #f8f8f8;
+    --footer-border-color: #ddd;
+    --link-color: black;
+    --select-focus-border-color: #ddd;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --button-bg-gradient-start: #4CAF50;
+    --button-bg-gradient-end: #45a049;
+    --button-hover-bg-gradient-start: #45a049;
+    --button-hover-bg-gradient-end: #3e8e41;
+    --button-text-color: #ffffff;
+    --button-shadow-color: rgba(0, 0, 0, 0.2);
+    --alert-bg-color: rgba(255, 0, 0, 0.1);
+    --alert-text-color: black;
+    --alert-border-color: rgba(255, 0, 0, 0.2);
+}
+
+.dark {
+    --header-bg-color: rgba(0, 0, 0, 0.8);
+    --header-text-color: white;
+    --nav-hover-bg-color: rgba(255, 255, 255, 0.1);
+    --nav-icon-fill: white;
+    --body-bg-color: #000000;
+    --body-text-color: white;
+    --footer-bg-color: #333333;
+    --footer-border-color: #555555;
+    --link-color: white;
+    --select-focus-border-color: #82aaff;
+    --box-shadow-color: rgba(255, 255, 255, 0.1);
+    --button-bg-gradient-start: #3e8e41;
+    --button-bg-gradient-end: #45a049;
+    --button-hover-bg-gradient-start: #4CAF50;
+    --button-hover-bg-gradient-end: #82aaff;
+    --button-text-color: #ffffff;
+    --button-shadow-color: rgba(255, 255, 255, 0.2);
+    --alert-bg-color: rgba(255, 69, 0, 0.2);
+    --alert-text-color: white;
+    --alert-border-color: rgba(255, 69, 0, 0.5);
+}
+
+.santa {
+    --header-bg-color: #ff0000;
+    --header-text-color: #fff200;
+    --nav-hover-bg-color: rgba(255, 255, 0, 0.3);
+    --nav-icon-fill: #fff200;
+    --body-bg-color: #ffe6e6;
+    --body-text-color: #333333;
+    --footer-bg-color: #ff0000;
+    --footer-border-color: #d40000;
+    --link-color: #fff200;
+    --select-focus-border-color: #fff200;
+    --box-shadow-color: rgba(255, 0, 0, 0.4);
+    --button-bg-gradient-start: rgba(243,89,89,255);
+    --button-bg-gradient-end: #d40000;
+    --button-hover-bg-gradient-start: #fff200;
+    --button-hover-bg-gradient-end: #ffb400;
+    --button-text-color: #ffffff;
+    --button-shadow-color: rgba(255, 255, 255, 0.2);
+    --alert-bg-color: #fff200;
+    --alert-text-color: #ff0000;
+    --alert-border-color: #ff6347;
+}
+
+
+.theme-transition * {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, fill 0.5s ease;
+  }

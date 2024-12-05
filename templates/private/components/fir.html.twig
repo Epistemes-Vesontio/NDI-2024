@@ -1,0 +1,42 @@
+{% block stylesheets %}
+    <style>
+        .XmasFir-container {
+            position: relative;
+            width: 30vw;
+            height: calc(30vw * 1.33);
+            background-image: url("{{ asset('img/christmas_tree/tree.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .ball {
+            position: absolute;
+            width: 10%;
+            height: 5vw;
+            background-image: url("{{ asset('img/christmas_tree/ball_basic.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        @media (max-width: 1200px) {
+            .XmasFir-container {
+                width: 90vw;
+                height: calc(90vw * 1.33);
+                background-color:red;
+            }
+
+            .ball {
+                width: 15%;
+                height: 15vw;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="XmasFir-container">
+        <div 
+            class="ball" 
+            style="top: 10%; left: 20%;"></div>
+</div>
+{% endblock %}

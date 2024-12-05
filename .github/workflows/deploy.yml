@@ -1,0 +1,45 @@
+name: Deploy Symfony Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to Server
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << EOF
+            docker exec fl_website rm -rf vendor/ var/
+            rm -rf ~/deploy
+            mkdir -p ~/deploy
+          EOF
+
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* .[^.]* ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }}:~/deploy/
+
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << EOF
+            cd ~/deploy
+
+            chmod +x ./build ./run
+
+            echo "Running build script..."
+            ./build
+
+            echo "Running run script..."
+            ./run
+          EOF
+

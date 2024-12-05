@@ -1,0 +1,26 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true 
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    App\EventListener\LocaleListener:
+        arguments:
+            $defaultLocale: 'en'
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, priority: 100 }
+    App\EventListener\NotFoundRedirectListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
+    App\Service\TranslationMetadataService:
+        arguments:
+            $translationDir: '%kernel.project_dir%/translations'
+    App\Twig\TranslationExtension:
+        arguments:
+            $translationMetadataService: '@App\Service\TranslationMetadataService'
+        tags: [ 'twig.extension' ]

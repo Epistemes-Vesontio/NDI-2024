@@ -1,0 +1,78 @@
+:root {
+  --sidebar-width: 15%;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  display: inline-block;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background-color: var(--header-bg-color);
+  box-shadow: 1px 0px 5px 0px var(--box-shadow-color);
+  color: var(--header-text-color);
+}
+
+.side-containers{
+  display: inline-block;
+  width: 100%;
+  padding-left: calc(var(--sidebar-width) + 10px);
+}
+
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  width: 170px;
+}
+
+.items {
+  padding-top: 10px;
+}
+
+.nav-item.selected {
+  background-color: var(--nav-hover-bg-color);
+}
+
+.nav-item a {
+  display: inline-flex;
+  width: 100%;
+  padding: 10px 0;
+  align-items: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--header-text-color);
+}
+
+.nav-item a:hover {
+  color: var(--link-color);
+  background-color: var(--nav-hover-bg-color);
+}
+
+.nav-item a .icon {
+  padding: 0 10px;
+  fill: var(--nav-icon-fill);
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: var(--sidebar-width);
+}
+
+.dropdown-menu {
+  display: none;
+  padding-left: 20px;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.subitem {
+  margin-left: 16px;
+}
+

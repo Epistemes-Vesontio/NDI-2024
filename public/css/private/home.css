@@ -1,0 +1,5 @@
+.banner {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px var(--box-shadow-color);
+}
