@@ -66,7 +66,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     box-sizing: border-box;
     background-color: var(--body-bg-color);
     color: var(--body-text-color);

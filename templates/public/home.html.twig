@@ -3,6 +3,8 @@
 {% block title %}{{ 'public.home.home'|trans }}{% endblock %}
 
 {% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/public/home.css') }}">
+
 {% endblock %}
 
 {% block javascripts %}
@@ -10,4 +12,12 @@
 {% endblock %}
 
 {% block body %}
+
+<iframe 
+    class="iframe"
+    src="/fr/game" 
+    frameborder="0" 
+    allowfullscreen>
+</iframe>
+
 {% endblock %}

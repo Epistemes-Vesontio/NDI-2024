@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='{{ app.request.locale }}'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episteme | {% block title %}{{ 'public.game.title'|trans }}{% endblock %}</title>
+    <link rel="icon" href="{{ asset('img/Episteme_logo.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/public/game.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/global/themes.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            {{ 'public.game.title'|trans }}
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="men">
+            <img src="{{ asset('img/men.svg') }}" alt="Description de l'image">
+        </div>
+    </div>
+
+
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('js/global/themes.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('js/global/app.js') }}" defer></script>
+    {% endblock %}
+
+</body>
+</html>

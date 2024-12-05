@@ -1,12 +1,9 @@
 {% extends 'public/base.html.twig' %}
 
-{% block title %}Erreur{% endblock %}
+{% block title %}{{ 'public.error.title'|trans }}{% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/OBJLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/MTLLoader.js"></script>
 {% endblock %}
 
 

@@ -50,6 +50,9 @@ msgstr "Cligger"
 msgid "an.error.has.occurred"
 msgstr "An error has occurred"
 
+msgid "public.error.title"
+msgstr "Error"
+
 #. sideBar privé
 msgid "private.sidebar.signout"
 msgstr "Sign out"
@@ -66,3 +69,6 @@ msgstr "Administration"
 
 msgid "front.theme_update"
 msgstr "Updated theme"
+
+msgid "public.game.title"
+msgstr "MyBalls Doctor"
