@@ -37,6 +37,7 @@
             <p>Contenu en cours de chargement...</p>
         {% endblock %}
     </div>
+    <div id="gift-container"></div>
     <footer class="footer">
         <aside style="align-items: center; display: flex; gap: 20px;">
             <img id="EpistemeSnow" width="50px" height="50px" src="{{ asset('img/Episteme_logo.png') }}" alt="Episteme logo">
@@ -49,6 +50,7 @@
     {% block javascripts %}
         <script type="text/javascript" src="{{ asset('js/global/themes.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('js/global/app.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('js/global/grinch-o-matic.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('js/public/base.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('js/public/ecoindex-badge.js') }}" defer></script>
         <script>
