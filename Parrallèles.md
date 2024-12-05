@@ -34,3 +34,9 @@
     - Température de l'eau
     - Biodiversité Marines
     - Acidité de l'eau (PH)
+  
+# Exemple 
+    - Sujet : Surpêche
+    - Problèmatique : Comment réduire l'impacte de la pêches sur les écosystèmes marins ?
+    - Objectif : Sensibiliser les joueurs sur les conséquences de la surpêche sur les écosystèmes marins
+    - Parrallèle : Surpêche / Ventre

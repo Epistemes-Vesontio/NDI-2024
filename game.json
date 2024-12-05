@@ -1,0 +1,151 @@
+{
+    "Estomac": {
+        "Questions": [
+            {
+                "Name": "Comment réduire l'impact de la surpêche dans les océans ?",
+                "Choix": [
+                    {
+                        "Name": "Réduire la pêche dans les océans et préférer la pisciculture",
+                        "Effects": [
+                            {
+                                "Cle": "Biodiversité",
+                                "Valeur": "10"
+                            },
+                            {
+                                "Cle": "Santé des océans",
+                                "Valeur": "8"
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Promouvoir la pêche sans réglementation",
+                        "Effects": [
+                            {
+                                "Cle": "Biodiversité",
+                                "Valeur": "-8"
+                            },
+                            {
+                                "Cle": "Santé des océans",
+                                "Valeur": "-10"
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Établir des zones marines protégées",
+                        "Effects": [
+                            {
+                                "Cle": "Biodiversité",
+                                "Valeur": "15"
+                            },
+                            {
+                                "Cle": "Santé des océans",
+                                "Valeur": "12"
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Utiliser des techniques de pêche durables",
+                        "Effects": [
+                            {
+                                "Cle": "Biodiversité",
+                                "Valeur": "7"
+                            },
+                            {
+                                "Cle": "Santé des océans",
+                                "Valeur": "5"
+                            }
+                        ]
+                    }
+                ]
+            },
+           
+        ]
+    },
+
+    "Poumons": {
+        "Question" : [
+            {
+                "Name": "Quels sont les impactes des déchets de plastiques dans les océans",
+                "Choix": [
+                    {
+                        "Name": "L'acidification des océans",
+                        "Effects": [
+                            {
+                                "Cle": "Biodiversité",
+                                "Valeur": "8"
+                            },
+                            {
+                                "Cle": "Santé des océans",
+                                "Valeur": "10"
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "La destruction des récifs coralliens",
+                        "Effects": [
+                            {
+                                "Cle": "Biodiversité",
+                                "Valeur": "15"
+                            },
+                            {
+                                "Cle": "Santé des océans",
+                                "Valeur": "12"
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "La disparition des espèces marines",
+                        "Effects": [
+                            {
+                                "Cle": "Biodiversité",
+                                "Valeur": "7"
+                            },
+                            {
+                                "Cle": "Santé des océans",
+                                "Valeur": "5"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "Cerveau": {
+            "Question" : [
+                {
+                    "Name": "Quels sont les conséquences du réchauffement climatique sur les océans ?",
+                    "Choix": [
+                        {
+                            "Name": "La montée des eaux",
+                            "Effects": [
+                                {
+                                    "Cle": "Biodiversité",
+                                    "Valeur": "8"
+                                },
+                                {
+                                    "Cle": "Santé des océans",
+                                    "Valeur": "10"
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "L'acidification des océans",
+                            "Effects": [
+                                {
+                                    "Cle": "Biodiversité",
+                                    "Valeur": "7"
+                                },
+                                {
+                                    "Cle": "Santé des océans",
+                                    "Valeur": "5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
