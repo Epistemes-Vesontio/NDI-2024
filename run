@@ -17,5 +17,3 @@ docker run --add-host host.docker.internal:host-gateway \
            -v ${LOCAL_DIR}:${CONTAINER_DIR} \
            $CONTAINER_NAME
 
-echo "Fetching logs from the container..."
-docker logs -f $CONTAINER_NAME
