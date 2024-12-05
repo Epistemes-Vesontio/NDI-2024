@@ -1,0 +1,20 @@
+{
+    "Organes": {
+        "Questions": [
+            {
+                "Name": "",
+                "Choix": [
+                    {
+                        "Name": "",
+                        "Effects": [
+                            {
+                                "Cle": "",
+                                "Valeur": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -29,3 +29,8 @@
 ## ODD-13 Action pour le climat
  - Politiques climatiques 	13.2 : Incorporer des mesures relatives aux changements climatiques dans les politiques, les stratégies et la planification nationales.
 
+## Statistiques 
+    - Niveau de la mer
+    - Température de l'eau
+    - Biodiversité Marines
+    - Acidité de l'eau (PH)
