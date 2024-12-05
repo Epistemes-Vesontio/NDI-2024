@@ -32,6 +32,22 @@ header {
     text-align: center;
 }
 
-.men img{
-    height: 100%;
+.men .body{
+    position: relative;
+    height: 690px;
+  width: 362px;
+  margin: auto;
+}
+
+.question{
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    background-color: red;
+}
+
+.poumon{
+    top: 25%;
+  left: 45%;
 }
