@@ -15,22 +15,49 @@
         </nav>
     </header>
 
+    <div id="overlay" class="overlay"></div>
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <h3 id="question-title"></h3>
+        <div id="choices"></div>
+        <button id="close-popup">Fermer</button>
+    </div>
+</div>
+
+    
     <div class="content">
         <div class="men">
             <div class="body">
                 <img src="{{ asset('img/aze.svg') }}" alt="Description de l'image">
-                <div class="question poumon">?</div>
-                <div class="question">?</div>
-                <div class="question">?</div>
-                <div class="question">?</div>
-                <div class="question">?</div>
-                <div class="question">?</div>
+                <div class="question poumon"><img src="{{ asset('img/poumon.png') }}" alt="Description"></div>
+                <div class="question estomac"><img src="{{ asset('img/estomac.png') }}" alt="Description"></div>
+                <div class="question cerveau"><img src="{{ asset('img/cerveau.png') }}" alt="Description"></div>
+                <div class="question coeur"><img src="{{ asset('img/coeur.png') }}" alt="Description"></div>
+                <div class="question foie"><img src="{{ asset('img/foie.png') }}" alt="Description"></div>
+                <div class="question rein"><img src="{{ asset('img/rein.png') }}" alt="Description"></div>
+                <div class="life">
+                    <div class="var">
+                        <img src="{{ asset('img/nivo.svg') }}" alt="Description">
+                        <span><p id="nivo"></p>/100</span>
+                    </div>
+                    <div class="var"><img src="{{ asset('img/ph.png') }}" alt="Description"><span><p id="ph"></p>/100</span></div>
+                    <div class="var"><img src="{{ asset('img/poisson.png') }}" alt="Description"><span><p id="poisson"></p>/100</span></div>
+                    <div class="var"><img src="{{ asset('img/thermo.png') }}" alt="Description"><span><p id="thermo"></p>/100</span></div>
+                </div>
             </div>
         </div>
     </div>
-
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <h3 id="question-title"></h3>
+            <div id="choices"></div>
+            <button id="close-popup">Fermer</button>
+        </div>
+    </div>
+    
 
     {% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/public/game.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('js/global/themes.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('js/global/app.js') }}" defer></script>
     {% endblock %}
