@@ -1,7 +1,3 @@
-div {
-    border: 1px solid white;
-}
-
 .clear {
     --header-bg-color: rgba(135, 206, 235, 0.8); /* Sky Blue */
     --header-text-color: white;

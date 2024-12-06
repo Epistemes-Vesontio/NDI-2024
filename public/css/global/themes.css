@@ -49,21 +49,21 @@
 }
 
 .santa {
-    --header-bg-color: #ff0000;
+    --header-bg-color: rgba(28, 69, 48, 0.80);
     --header-text-color: #fff200;
     --nav-hover-bg-color: rgba(255, 255, 0, 0.3);
     --nav-icon-fill: #fff200;
-    --body-bg-color: #ffe6e6;
-    --body-text-color: #333333;
-    --footer-bg-color: #ff0000;
-    --footer-border-color: #d40000;
-    --link-color: #fff200;
-    --select-focus-border-color: #fff200;
+    --body-bg-color: rgb(28, 69, 48);
+    --body-text-color: white;
+    --footer-bg-color: #1B2C21;
+    --footer-border-color: #1B2C21;
+    --link-color: white;
+    --select-focus-border-color: #C5161F;
     --box-shadow-color: rgba(255, 0, 0, 0.4);
     --button-bg-gradient-start: rgba(243,89,89,255);
     --button-bg-gradient-end: #d40000;
-    --button-hover-bg-gradient-start: #fff200;
-    --button-hover-bg-gradient-end: #ffb400;
+    --button-hover-bg-gradient-start: #C5161F;
+    --button-hover-bg-gradient-end: #FFF;
     --button-text-color: #ffffff;
     --button-shadow-color: rgba(255, 255, 255, 0.2);
     --alert-bg-color: #fff200;
