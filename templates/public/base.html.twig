@@ -17,7 +17,6 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="/{{ app.request.locale }}/about">{{ 'public.navbar.about_title'|trans }}</a></li>
                 <li><a href="/{{ app.request.locale }}/podcasts">Podcasts</a></li>
             </ul>
         </nav>
@@ -30,7 +29,7 @@
     <footer class="footer">
         <aside style="align-items: center; display: flex; gap: 20px;">
             <img id="EpistemeSnow" width="50px" height="50px" src="{{ asset('img/Episteme_logo.png') }}" alt="Episteme logo">
-            <a href="https://episteme-bde.fr" class="copy">
+            <a href="/{{ app.request.locale }}/about" class="copy">
                 <p>Copyright © 2024 Episteme</p>
             </a>
             <div id="ecoindex-badge"></div>
