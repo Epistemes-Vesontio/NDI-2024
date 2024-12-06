@@ -8,25 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function getUserLocation() {
         return { latitude: 47.25, longitude: 6.033333 };
     }
-    /*
-    async function getUserLocation() {
-        return new Promise((resolve, reject) => {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const { latitude, longitude } = position.coords;
-                        resolve({ latitude, longitude });
-                    },
-                    (error) => {
-                        reject(error);
-                    }
-                );
-            } else {
-                reject(new Error("Geolocation is not supported by this browser."));
-            }
-        });
-    }*/
-
+    
     /**
      * Récupère les données météorologiques en utilisant les coordonnées de l'utilisateur.
      */
