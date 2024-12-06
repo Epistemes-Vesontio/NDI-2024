@@ -43,8 +43,8 @@ msgstr "À propos"
 msgid "public.navbar.contact_title"
 msgstr "Contactez-nous"
 
-msgid "public.navbar.clicker_title"
-msgstr "Cliqueur"
+msgid "public.navbar.meteo_title"
+msgstr "Météo"
 
 #. Error Page
 msgid "an.error.has.occurred"
