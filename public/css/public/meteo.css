@@ -67,7 +67,9 @@
 .bottom-section {
     padding: 15px;
     width: 100%;
+    display: flex;
 }
+
 
 #right-button {
     margin-left: auto; /* Utilise margin-left pour aligner à droite */
@@ -107,19 +109,10 @@ canvas {
 
 }
 
-/* Media Queries pour les petits écrans */
-@media (max-width: 600px) {
-    .weather-box, .date-bar, .info-section, canvas {
-        width: 90%;
-    }
 
-    #icon-element img {
-        width: 20vw;
-        height: 20vw;
-        max-width: 100px; /* Limite la taille maximale de l'image */
-    }
 
-    .button {
-        margin: 0 5%;
-    }
+
+.graphe{
+    height: 100%;
+    text-align: center;
 }
