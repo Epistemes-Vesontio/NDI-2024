@@ -1,0 +1,33 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}{{ 'public.meteo.meteo'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/public/meteo.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/public/meteo.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+ <div id="weather-container">
+        <div class="weather-box">
+            <div class="top-section">
+                <div class="date-bar" id="date-bar">Date:</div>
+                <div class="info-section">
+                    <div class="left-element" id="left-element">element</div>
+                    <div class="right-element">
+                        <div id="temperature">T°C</div>
+                        <div id="geolocation">LAT: LONG:</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <canvas id="weather-chart"></canvas>
+            </div>
+        </div>
+    </div>
+{% endblock %}
