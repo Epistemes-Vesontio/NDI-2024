@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
 
+            console.log ('Données météo:', data);
+
             localStorage.setItem('weather_data', JSON.stringify(data, null, 2));
             updateUI(data, coords);
         } catch (error) {
@@ -54,6 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
         precipitationChart.style.display = 'none';
         cloudCoverChart.style.display = 'none';
         windChart.style.display = 'none';
+
+        // Fonction de la température, on affiche une image dans le div #icon-element
+        const temperature = JSON.parse(localStorage.getItem('weather_data')).hourly.temperature_2m[0];
+        const iconElement = document.getElementById('icon-element');
+        if (temperature < 0) {
+            iconElement.innerHTML = '<img src="/img/meteo/snowflake.svg" alt="snowflake">';
+        } else if (temperature < 10) {
+            iconElement.innerHTML = '<img src="/img/meteo/cloud.svg" alt="cloud">';
+        } else if (temperature < 20) {
+            iconElement.innerHTML = '<img src="/img/meteo/sun.svg" alt="sun">';
+        } else {
+            iconElement.innerHTML = '<img src"/img/meteo/sun.svg" alt="sun">';
+        }
     }
 
     /**
@@ -69,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentDate = new Date().toLocaleDateString();
         dateBar.textContent = currentDate;
 
-        const currentTemperature = data.hourly.temperature_2m[0];
+        const currentTemperature = data.hourly.temperature_2m[indexDate];
         temperature.textContent = `${currentTemperature}°C`;
 
         geolocation.textContent = `Lat: ${Math.floor(coords.latitude)} Lon: ${Math.floor(coords.longitude)}`;
@@ -319,6 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
         }
 
+        updateUI(data, { latitude: 47.25, longitude: 6.033333 });
         graphButton('right');
     }
 
