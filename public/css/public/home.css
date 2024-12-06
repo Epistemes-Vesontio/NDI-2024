@@ -12,7 +12,13 @@
 .content {
     margin-top: 2rem !important;
     text-align: center;
-    color: var(--body-text-color);
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .intro h2 {

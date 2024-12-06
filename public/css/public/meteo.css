@@ -1,4 +1,4 @@
-#weather-container {
+.weather-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,11 +88,23 @@ canvas {
     width: 100%;
     max-width: 600px; /* Limite la largeur maximale pour les grands écrans */
 }
+.theme-box{
+    display: flex;
+    gap: 5px;
+}
 
 .theme-container{
     display : flex;
     float : left;
     
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;
+
 }
 
 /* Media Queries pour les petits écrans */
