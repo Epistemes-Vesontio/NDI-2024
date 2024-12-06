@@ -9,8 +9,6 @@
     margin: 0;
 }
 
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -23,56 +21,59 @@ header {
     position: fixed;
     justify-content: center;
     font-size: 4vw;
-
 }
 
-.men{
-    padding-top:8vw ;
+.men {
+    padding-top: 8vw;
     height: 92vh;
     text-align: center;
 }
 
-.men .body{
+.men .body {
     position: relative;
     height: 690px;
-  width: 362px;
-  margin: auto;
+    width: 362px;
+    margin: auto;
 }
 
-.question{
+.question {
     position: absolute;
     width: 2rem;
     height: 2rem;
     font-size: 2rem;
 }
 
-.poumon{
+.poumon {
     top: 17%;
-  left: 38%;
+    left: 38%;
 }
 
-.estomac{
+.estomac {
     top: 34%;
-  left: 45%;
+    left: 45%;
 }
 
-.cerveau{
+.cerveau {
     top: 4%;
-  left: 38%;
+    left: 38%;
 }
-.coeur{
+
+.coeur {
     top: 25%;
-  left: 50%;
+    left: 50%;
 }
-.foie{
+
+.foie {
     top: 33%;
-  left: 37%;
+    left: 37%;
 }
-.rein{
+
+.rein {
     top: 43%;
     left: 36%;
 }
-.life{
+
+.life {
     font-size: 2rem;
     display: flex;
     flex-direction: column;
@@ -82,7 +83,7 @@ header {
     left: 0%;
 }
 
-.life .var{
+.life .var {
     width: 2rem;
     height: 2rem;
     fill: var(--header-text-color);
@@ -91,16 +92,15 @@ header {
     gap: 10px;
 }
 
-.life .var img{
+.life .var img {
     height: 100%;
 }
 
-.life .var svg{
+.life .var svg {
     height: 100%;
 }
 
-
-.life .var span{
+.life .var span {
     display: flex;
 }
 
@@ -110,30 +110,31 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Couleur semi-transparente */
-    z-index: 999; /* Derrière la popup */
-    display: none; /* Par défaut, caché */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
 }
 
 .overlay.active {
-    display: block; /* Visible quand actif */
+    display: block;
 }
 
 .popup {
     position: fixed;
-    z-index: 1000; /* Au-dessus de l'overlay */
-    background: white;
-    border: 1px solid #ccc;
+    z-index: 1000;
+    background-color: var(--body-bg-color);
+    color: var(--body-text-color);
+    border: 1px solid var(--box-shadow-color);
+    box-shadow: 0px 4px 10px var(--box-shadow-color);
     padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     width: 80%;
     max-width: 500px;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
     text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-
 
 .popup.hidden {
     display: none;
@@ -143,10 +144,34 @@ header {
     text-align: center;
 }
 
+.popup button {
+    background: linear-gradient(
+        to bottom,
+        var(--button-bg-gradient-start),
+        var(--button-bg-gradient-end)
+    );
+    color: var(--button-text-color);
+    border: 1px solid var(--button-shadow-color);
+    box-shadow: 0 4px 6px var(--button-shadow-color);
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-#choices{
-    display: flex;
-    flex-direction: column;
+.popup button:hover {
+    background: linear-gradient(
+        to bottom,
+        var(--button-hover-bg-gradient-start),
+        var(--button-hover-bg-gradient-end)
+    );
+    transform: scale(1.05);
+}
+
+.popup button:disabled {
+    background: var(--alert-bg-color);
+    color: var(--alert-text-color);
+    cursor: not-allowed;
 }
 
 @keyframes zoomEffect {
@@ -168,8 +193,56 @@ header {
     animation: zoomEffect 1.5s ease-in-out infinite;
 }
 
-
-
-.question img{
+.question img {
     height: 5rem;
+}
+
+#end-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--body-bg-color);
+    color: var(--body-text-color);
+    border: 1px solid var(--box-shadow-color);
+    box-shadow: 0px 4px 10px var(--box-shadow-color);
+    padding: 20px;
+    text-align: center;
+    z-index: 2000;
+    width: 80%;
+    max-width: 500px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#end-screen.hidden {
+    display: none;
+}
+
+#end-screen button {
+    margin-top: 20px;
+    background: linear-gradient(
+        to bottom,
+        var(--button-bg-gradient-start),
+        var(--button-bg-gradient-end)
+    );
+    color: var(--button-text-color);
+    border: 1px solid var(--button-shadow-color);
+    box-shadow: 0 4px 6px var(--button-shadow-color);
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#end-screen button:hover {
+    background: linear-gradient(
+        to bottom,
+        var(--button-hover-bg-gradient-start),
+        var(--button-hover-bg-gradient-end)
+    );
+    transform: scale(1.05);
+}
+
+#end-screen p {
+    text-align: start;
 }

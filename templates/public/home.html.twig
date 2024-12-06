@@ -4,7 +4,6 @@
 
 {% block stylesheets %}
 <link rel="stylesheet" href="{{ asset('css/public/home.css') }}">
-
 {% endblock %}
 
 {% block javascripts %}
@@ -12,12 +11,34 @@
 {% endblock %}
 
 {% block body %}
+<div class="content">
+    <div class="intro">
+        <h2>{{ 'Préparez-vous à jouer au Docteur Maboule !' }}</h2>
+        <p>{{ "Vous incarnez un médecin chargé de sauver les océans. Prenez les bonnes décisions pour préserver l\'équilibre de la planète. Chaque choix compte !" }}</p>
+        <button id="start-game" class="start-button">
+            {{ 'Commencer le jeu'|trans }}
+        </button>
+    </div>
 
-<iframe 
-    class="iframe"
-    src="/{{ app.request.locale }}/game" 
-    frameborder="0" 
-    allowfullscreen>
-</iframe>
+    <iframe 
+        id="game-iframe"
+        class="iframe hidden"
+        src="/{{ app.request.locale }}/game" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+</div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const startButton = document.getElementById('start-game');
+        const intro = document.querySelector('.intro');
+        const iframe = document.getElementById('game-iframe');
+        
+        startButton.addEventListener('click', () => {
+            intro.style.display = "none";
+            iframe.classList.remove('hidden');
+        });
+    });
+</script>
 {% endblock %}

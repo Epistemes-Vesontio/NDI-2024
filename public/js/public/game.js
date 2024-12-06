@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     feedbackElement.id = "feedback";
     popup.appendChild(feedbackElement);
 
+    const endScreen = document.createElement('div');
+    endScreen.id = "end-screen";
+    endScreen.classList.add('hidden');
+    document.body.appendChild(endScreen);
+
     const indicators = {
         nivo: 100,
         ph: 100,
@@ -20,7 +25,69 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('ph').textContent = indicators.ph;
         document.getElementById('poisson').textContent = indicators.poisson;
         document.getElementById('thermo').textContent = indicators.thermo;
+
+        if (Object.values(indicators).some(value => value <= 0)) {
+            showEndScreen();
+        }
     };
+
+    const showEndScreen = () => {
+        popup.classList.add('hidden');
+        overlay.classList.remove('active');
+    
+        const getImpactMessage = () => {
+            let messages = [];
+    
+            if (indicators.nivo <= 20) {
+                messages.push("La montée des eaux a submergé de nombreuses zones côtières, causant des migrations massives et la perte de biodiversité terrestre.");
+            } else if (indicators.nivo >= 80) {
+                messages.push("Le niveau des océans est stable, offrant des conditions favorables aux écosystèmes côtiers.");
+            }
+    
+            if (indicators.ph <= 20) {
+                messages.push("L'acidité des océans est critique, détruisant les récifs coralliens et menaçant les espèces marines dépendantes.");
+            } else if (indicators.ph >= 80) {
+                messages.push("L'acidité des océans est maîtrisée, permettant la régénération des récifs coralliens et des écosystèmes marins.");
+            }
+    
+            if (indicators.poisson <= 20) {
+                messages.push("La biodiversité marine s'est effondrée, mettant en danger la chaîne alimentaire et les communautés dépendantes de la pêche.");
+            } else if (indicators.poisson >= 80) {
+                messages.push("La biodiversité marine est florissante, garantissant un écosystème équilibré et résilient.");
+            }
+    
+            if (indicators.thermo >= 80) {
+                messages.push("La température des océans a considérablement augmenté, provoquant le blanchiment des coraux et des conditions hostiles pour de nombreuses espèces marines.");
+            } else if (indicators.thermo <= 20) {
+                messages.push("La température des océans est stable, limitant les effets néfastes du changement climatique sur la faune marine.");
+            }
+    
+            return messages.join("<br>");
+        };
+    
+        const resultMessage = getImpactMessage();
+    
+        endScreen.innerHTML = `
+            <h2>Résumé des indicateurs</h2>
+            <p><strong>Niveau des océans :</strong> ${indicators.nivo}</p>
+            <p><strong>Acidité des océans :</strong> ${indicators.ph}</p>
+            <p><strong>Biodiversité marine :</strong> ${indicators.poisson}</p>
+            <p><strong>Température des océans :</strong> ${indicators.thermo}</p>
+            <h3>Impact environnemental :</h3>
+            <p>${resultMessage}</p>
+            <button id="restart-game">Recommencer</button>
+        `;
+        endScreen.classList.remove('hidden');
+    
+        document.body.addEventListener('click', (event) => {
+            if (event.target && event.target.id === 'restart-game') {
+                console.log("Recommencer cliqué");
+                location.reload();
+            }
+        });
+    };
+    
+    
     const data = {
         "estomac": {
             "Questions": [
@@ -39,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Name": "Permettre la pêche sans réglementation",
                             "Effects": [
                                 { "Cle": "poisson", "Valeur": -8 },
-                                { "Cle": "ph", "Valeur": -10 }
+                                { "Cle": "ph", "Valeur": -100 }
                             ],
                             "Feedback": "Mauvaise décision ! Cela accélère l'épuisement des ressources marines."
                         }
@@ -59,8 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         {
                             "Name": "Soutenir toutes les formes de pêche",
                             "Effects": [
-                                { "Cle": "poisson", "Valeur": -12 },
-                                { "Cle": "ph", "Valeur": -7 }
+                                { "Cle": "poisson", "Valeur": -32 },
+                                { "Cle": "ph", "Valeur": -20 }
                             ],
                             "Feedback": "Dommage ! Cela détruit les habitats marins à long terme."
                         }
@@ -84,8 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         {
                             "Name": "Autoriser les rejets pour stimuler l'économie",
                             "Effects": [
-                                { "Cle": "poisson", "Valeur": -10 },
-                                { "Cle": "ph", "Valeur": -8 }
+                                { "Cle": "poisson", "Valeur": -30 },
+                                { "Cle": "ph", "Valeur": -20 }
                             ],
                             "Feedback": "Mauvais choix ! Ces rejets détruisent les récifs coralliens et nuisent aux écosystèmes."
                         }
@@ -105,8 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         {
                             "Name": "Ne pas intervenir",
                             "Effects": [
-                                { "Cle": "poisson", "Valeur": -8 },
-                                { "Cle": "thermo", "Valeur": -6 }
+                                { "Cle": "poisson", "Valeur": -34 },
+                                { "Cle": "thermo", "Valeur": -15 }
                             ],
                             "Feedback": "Mauvais choix ! Les plastiques continueront de polluer les océans."
                         }
@@ -122,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         {
                             "Name": "Promouvoir les énergies renouvelables",
                             "Effects": [
-                                { "Cle": "thermo", "Valeur": -8 },
+                                { "Cle": "thermo", "Valeur": -42 },
                                 { "Cle": "nivo", "Valeur": 6 }
                             ],
                             "Feedback": "Très bon choix ! Cela réduit les émissions de gaz à effet de serre."
@@ -131,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Name": "Ne rien changer aux pratiques actuelles",
                             "Effects": [
                                 { "Cle": "thermo", "Valeur": 10 },
-                                { "Cle": "nivo", "Valeur": -6 }
+                                { "Cle": "nivo", "Valeur": -32 }
                             ],
                             "Feedback": "Mauvaise décision ! Cela accélère la montée des eaux."
                         }
@@ -155,8 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         {
                             "Name": "Ignorer le problème",
                             "Effects": [
-                                { "Cle": "ph", "Valeur": -8 },
-                                { "Cle": "poisson", "Valeur": -5 }
+                                { "Cle": "ph", "Valeur": -24 },
+                                { "Cle": "poisson", "Valeur": -13 }
                             ],
                             "Feedback": "Mauvais choix ! Les récifs risquent de disparaître complètement."
                         }
@@ -181,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Name": "Ne pas intervenir immédiatement",
                             "Effects": [
                                 { "Cle": "poisson", "Valeur": -10 },
-                                { "Cle": "thermo", "Valeur": -9 }
+                                { "Cle": "thermo", "Valeur": -30 }
                             ],
                             "Feedback": "Dommage ! Les habitats marins sont gravement affectés."
                         }
@@ -205,8 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         {
                             "Name": "Ignorer la pollution",
                             "Effects": [
-                                { "Cle": "poisson", "Valeur": -7 },
-                                { "Cle": "ph", "Valeur": -6 }
+                                { "Cle": "poisson", "Valeur": -42 },
+                                { "Cle": "ph", "Valeur": -15 }
                             ],
                             "Feedback": "Mauvais choix ! Les écosystèmes marins continueront de se dégrader."
                         }
@@ -231,13 +298,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const openPopup = (organe) => {
         const organData = data[organe];
         if (organData && organData.Questions.length > 0) {
-            const question = organData.Questions.shift(); // Supprime la question après affichage
+            const question = organData.Questions.shift();
             questionTitle.textContent = question.Name;
             choicesContainer.innerHTML = '';
-            feedbackElement.textContent = ''; // Réinitialise le feedback
+            feedbackElement.textContent = '';
 
             let choiceClicked = false;
-            closePopup.style.display = 'none'; // Cache le bouton "Fermer"
+            closePopup.style.display = 'none';
 
             question.Choix.forEach((choix) => {
                 const button = document.createElement('button');
@@ -248,8 +315,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         applyEffects(choix.Effects);
                         feedbackElement.textContent = choix.Feedback;
                         choiceClicked = true;
-                        closePopup.style.display = 'block'; // Affiche le bouton "Fermer"
-                        // Désactiver tous les boutons
+                        closePopup.style.display = 'block';
+
                         const allButtons = choicesContainer.querySelectorAll('button');
                         allButtons.forEach(btn => btn.disabled = true);
                     }
@@ -258,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 choicesContainer.appendChild(button);
             });
 
-            popup.dataset.currentOrgane = organe; // Stocke l'organe actuellement ouvert
+            popup.dataset.currentOrgane = organe;
             popup.classList.remove('hidden');
             overlay.classList.add('active');
         } else {
@@ -267,16 +334,21 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const closePopupAction = () => {
-        const currentOrgane = popup.dataset.currentOrgane; // Récupère l'organe actif
+        const currentOrgane = popup.dataset.currentOrgane;
         if (currentOrgane && data[currentOrgane]?.Questions.length === 0) {
             const organeDiv = document.querySelector(`.question.${currentOrgane}`);
             if (organeDiv) {
-                organeDiv.style.display = 'none'; // Masque l'organe
+                organeDiv.style.display = 'none';
             }
         }
         popup.classList.add('hidden');
         overlay.classList.remove('active');
-        popup.dataset.currentOrgane = ''; // Réinitialise l'organe actif
+
+        if (Object.values(data).every(org => org.Questions.length === 0)) {
+            showEndScreen();
+        }
+
+        popup.dataset.currentOrgane = '';
     };
 
     closePopup.addEventListener('click', () => {
