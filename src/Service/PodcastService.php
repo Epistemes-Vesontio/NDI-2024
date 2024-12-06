@@ -46,7 +46,7 @@ class PodcastService
 
         return [
             'name' => $podcastName,
-            'videos' => $this->findFilesByPattern($podcastPath, '*-SD*.mov'),
+            'videos' => $this->findFilesByPattern($podcastPath, '*.mov'),
             'audio' => $this->findFilesByPattern($podcastPath, 'PODCAST-AUDIO-*.m4a'),
             'script' => $this->findFilesByPattern($podcastPath, 'Script - *.pdf')[0] ?? null
         ];
