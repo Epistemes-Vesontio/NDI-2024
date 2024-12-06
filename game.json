@@ -11,10 +11,6 @@
                                 "Cle": "Biodiversité",
                                 "Valeur": "10"
                             },
-                            {
-                                "Cle": "Santé des océans",
-                                "Valeur": "8"
-                            }
                         ]
                     },
                     {
@@ -23,10 +19,6 @@
                             {
                                 "Cle": "Biodiversité",
                                 "Valeur": "-8"
-                            },
-                            {
-                                "Cle": "Santé des océans",
-                                "Valeur": "-10"
                             }
                         ]
                     },
@@ -38,7 +30,7 @@
                                 "Valeur": "15"
                             },
                             {
-                                "Cle": "Santé des océans",
+                                "Cle": "PH",
                                 "Valeur": "12"
                             }
                         ]
@@ -50,10 +42,6 @@
                                 "Cle": "Biodiversité",
                                 "Valeur": "7"
                             },
-                            {
-                                "Cle": "Santé des océans",
-                                "Valeur": "5"
-                            }
                         ]
                     }
                 ]
@@ -75,7 +63,7 @@
                                 "Valeur": "8"
                             },
                             {
-                                "Cle": "Santé des océans",
+                                "Cle": "PH",
                                 "Valeur": "10"
                             }
                         ]
@@ -88,7 +76,7 @@
                                 "Valeur": "15"
                             },
                             {
-                                "Cle": "Santé des océans",
+                                "Cle": "Niveau de l'eau",
                                 "Valeur": "12"
                             }
                         ]
@@ -100,10 +88,6 @@
                                 "Cle": "Biodiversité",
                                 "Valeur": "7"
                             },
-                            {
-                                "Cle": "Santé des océans",
-                                "Valeur": "5"
-                            }
                         ]
                     }
                 ]
@@ -125,7 +109,7 @@
                                     "Valeur": "8"
                                 },
                                 {
-                                    "Cle": "Santé des océans",
+                                    "Cle": "Niveaux de la mer",
                                     "Valeur": "10"
                                 }
                             ]
@@ -138,7 +122,7 @@
                                     "Valeur": "7"
                                 },
                                 {
-                                    "Cle": "Santé des océans",
+                                    "Cle": "PH",
                                     "Valeur": "5"
                                 }
                             ]
@@ -158,11 +142,11 @@
                             "Name": "La disparition des espèces marines",
                             "Effects": [
                                 {
-                                    "Cle": "Biodiversité",
+                                    "Cle": "Températures",
                                     "Valeur": "8"
                                 },
                                 {
-                                    "Cle": "Santé des océans",
+                                    "Cle": "PH",
                                     "Valeur": "10"
                                 }
                             ]
@@ -174,10 +158,6 @@
                                     "Cle": "Biodiversité",
                                     "Valeur": "-7"
                                 },
-                                {
-                                    "Cle": "Santé des océans",
-                                    "Valeur": "-9"
-                                }
                             ]
                         }
                     ]
@@ -195,11 +175,11 @@
                             "Name": "Formation de marées noires",
                             "Effects": [
                                 {
-                                    "Cle": "Biodiversité",
+                                    "Cle": "Temperature",
                                     "Valeur": "10"
                                 },
                                 {
-                                    "Cle": "Santé des océans",
+                                    "Cle": "PH",
                                     "Valeur": "9"
                                 }
                             ]
@@ -211,10 +191,6 @@
                                     "Cle": "Biodiversité",
                                     "Valeur": "8"
                                 },
-                                {
-                                    "Cle": "Santé des océans",
-                                    "Valeur": "7"
-                                }
                             ]
                         }
                     ]
