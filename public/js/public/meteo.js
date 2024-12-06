@@ -82,8 +82,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const temperature = document.getElementById('temperature');
         const geolocation = document.getElementById('geolocation');
 
-        const currentDate = new Date().toLocaleDateString();
-        dateBar.textContent = currentDate;
+        if(indexDate === 3){
+            const currentDate = new Date().toLocaleDateString();
+            dateBar.textContent = currentDate;
+        }
+        else{
+            // Rendu : 06/12/2024
+            // On Récupère la date pour avoir un JJ/MM/AAAA et pas AAAA-MM-JJ
+            let otherdate = data.hourly.time[indexDate * 24].slice(0, 10);
+            // On Met dans l'ordre JJ/MM/AAAA
+            let date = otherdate.slice(8, 10) + '/' + otherdate.slice(5, 7) + '/' + otherdate.slice(0, 4);
+            dateBar.textContent = date;
+        }
 
         const currentTemperature = data.hourly.temperature_2m[indexDate];
         temperature.textContent = `${currentTemperature}°C`;
