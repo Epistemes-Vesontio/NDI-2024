@@ -1,0 +1,16 @@
+.podcast-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--body-bg-color);
+    color: var(--body-text-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.podcast-list a {
+    padding: 0;
+    width: 100%;
+}

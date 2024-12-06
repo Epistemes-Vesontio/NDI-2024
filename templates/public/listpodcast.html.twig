@@ -2,12 +2,16 @@
 
 {% block title %}Podcasts{% endblock %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/public/podcast.css') }}">
+{% endblock %}
+
 {% block body %}
     <div class="podcast-list">
-        <h1>Available Podcasts</h1>
+        <h1>Podcasts disponible</h1>
         {% for podcast in podcasts %}
             <div class="podcast-item">
-                <a href="{{ path('podcast_view', {podcastName: podcast.name}) }}">
+                <a class="button" href="{{ path('podcast_view', {podcastName: podcast.name}) }}">
                 <h2>{{ podcast.name }}</h2>
                 </a>
             </div>

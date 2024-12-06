@@ -11,11 +11,6 @@ php bin/console cache:warmup --env=prod
 # Migrate database
 php bin/console d:m:m --env=prod --no-interaction
 
-php bin/console doctrine:migrations:diff
-php bin/console doctrine:migrations:migrate
-
-# Create the admin user and the permissions
-php bin/console app:create-admin admin admin
 
 # Start apache
 exec apache2-foreground
