@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
-    const themes = ['light', 'dark', 'santa'];
+    const themes = ['light', 'dark', 'santa', 'blue-sky', 'rain', 'cloudy', 'strom', 'snow'];
     let currentTheme = localStorage.getItem('theme') || themes[0];
 
     body.classList.add(currentTheme);
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem('theme', currentTheme);
 
-        window.showPopup(window.getTranslation('front.theme_update')+': '+currentTheme);
+        // window.showPopup(window.getTranslation('front.theme_update')+': '+currentTheme);
 
         setTimeout(() => {
             body.classList.remove('theme-transition');
