@@ -144,6 +144,7 @@ header {
     text-align: center;
 }
 
+
 .popup button {
     background: linear-gradient(
         to bottom,
@@ -245,4 +246,51 @@ header {
 
 #end-screen p {
     text-align: start;
+}
+
+
+
+
+#intro-popup {
+    padding-top: 1rem;
+    position: fixed;
+    z-index: 2000;
+    background: var(--body-bg-color);
+    border: 2px solid var(--header-text-color);
+    padding: 20px;
+    box-shadow: 0px 4px 10px var(--box-shadow-color);
+    width: 80%;
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 55%;
+    text-align: center;
+    height:690px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro-popup.hidden {
+    display: none;
+}
+
+#intro-popup button {
+    background: linear-gradient(
+        var(--button-bg-gradient-start),
+        var(--button-bg-gradient-end)
+    );
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#intro-popup button:hover {
+    background: linear-gradient(
+        var(--button-hover-bg-gradient-start),
+        var(--button-hover-bg-gradient-end)
+    );
 }

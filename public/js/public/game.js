@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const introPopup = document.createElement('div');
+    introPopup.id = "intro-popup";
+    introPopup.classList.add('popup');
+    introPopup.innerHTML = `
+        <div class="popup-content">
+            <h3>Bienvenue dans le jeu !</h3>
+            <p>
+                Ce jeu fait un parallèle entre les océans et le corps humain. Cliquez sur les organes pour répondre 
+                à des questions qui influenceront l'équilibre environnemental. Prenez des décisions éclairées pour 
+                sauver la planète !
+            </p>
+            <button id="start-intro">Commencer</button>
+        </div>
+    `;
+    document.body.appendChild(introPopup);
+
+    const startIntroButton = document.getElementById('start-intro');
     const popup = document.getElementById('popup');
     const overlay = document.getElementById('overlay');
     const questionTitle = document.getElementById('question-title');
@@ -81,12 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
         document.body.addEventListener('click', (event) => {
             if (event.target && event.target.id === 'restart-game') {
-                console.log("Recommencer cliqué");
                 location.reload();
             }
         });
     };
-    
+
+    startIntroButton.addEventListener('click', () => {
+        introPopup.remove();
+    });
     
     const data = {
         "estomac": {
@@ -100,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 { "Cle": "poisson", "Valeur": 10 },
                                 { "Cle": "ph", "Valeur": 8 }
                             ],
-                            "Feedback": "Bonne décision ! La pisciculture durable réduit la pression sur les écosystèmes marins."
+                            "Feedback": "Bonne décision ! La pisciculture durable réduit la pression sur les écosystèmes marins. (ODD 14: Vie aquatique)"
                         },
                         {
                             "Name": "Permettre la pêche sans réglementation",
@@ -108,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 { "Cle": "poisson", "Valeur": -8 },
                                 { "Cle": "ph", "Valeur": -100 }
                             ],
-                            "Feedback": "Mauvaise décision ! Cela accélère l'épuisement des ressources marines."
+                            "Feedback": "Mauvaise décision ! Cela accélère l'épuisement des ressources marines. (ODD 14: Vie aquatique)"
                         }
                     ]
                 },
@@ -121,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 { "Cle": "poisson", "Valeur": 7 },
                                 { "Cle": "thermo", "Valeur": 5 }
                             ],
-                            "Feedback": "Très bon choix ! Cela encourage la transition vers des pratiques durables."
+                            "Feedback": "Très bon choix ! Cela encourage la transition vers des pratiques durables. (ODD 12: Consommation et production responsables)"
                         },
                         {
                             "Name": "Soutenir toutes les formes de pêche",
@@ -129,7 +148,28 @@ document.addEventListener('DOMContentLoaded', () => {
                                 { "Cle": "poisson", "Valeur": -32 },
                                 { "Cle": "ph", "Valeur": -20 }
                             ],
-                            "Feedback": "Dommage ! Cela détruit les habitats marins à long terme."
+                            "Feedback": "Dommage ! Cela détruit les habitats marins à long terme. (ODD 14: Vie aquatique)"
+                        }
+                    ]
+                },
+                {
+                    "Name": "De grandes quantités de plastique se retrouvent dans l'estomac des animaux marins. Comment y remédier ?",
+                    "Choix": [
+                        {
+                            "Name": "Interdire les plastiques à usage unique",
+                            "Effects": [
+                                { "Cle": "poisson", "Valeur": 12 },
+                                { "Cle": "ph", "Valeur": 5 }
+                            ],
+                            "Feedback": "Excellente décision ! Cela protège la faune marine et améliore la qualité de l'eau. (ODD 14: Vie aquatique)"
+                        },
+                        {
+                            "Name": "Ignorer le problème",
+                            "Effects": [
+                                { "Cle": "poisson", "Valeur": -15 },
+                                { "Cle": "ph", "Valeur": -10 }
+                            ],
+                            "Feedback": "Mauvais choix ! La pollution plastique continue de menacer les écosystèmes marins. (ODD 14: Vie aquatique)"
                         }
                     ]
                 }
@@ -146,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 { "Cle": "poisson", "Valeur": 10 },
                                 { "Cle": "ph", "Valeur": 5 }
                             ],
-                            "Feedback": "Excellent choix ! Réduire les plastiques protège la biodiversité."
+                            "Feedback": "Excellent choix ! Réduire les plastiques protège la biodiversité. (ODD 14: Vie aquatique)"
                         },
                         {
                             "Name": "Autoriser les rejets pour stimuler l'économie",
@@ -154,28 +194,28 @@ document.addEventListener('DOMContentLoaded', () => {
                                 { "Cle": "poisson", "Valeur": -30 },
                                 { "Cle": "ph", "Valeur": -20 }
                             ],
-                            "Feedback": "Mauvais choix ! Ces rejets détruisent les récifs coralliens et nuisent aux écosystèmes."
+                            "Feedback": "Mauvais choix ! Ces rejets détruisent les récifs coralliens et nuisent aux écosystèmes. (ODD 14: Vie aquatique)"
                         }
                     ]
                 },
                 {
-                    "Name": "Les déchets de plastique augmentent dans les océans. Quelle action prenez-vous ?",
+                    "Name": "Les émissions de gaz à effet de serre augmentent, réduisant l'oxygène dissous dans l'eau. Quelle mesure adoptez-vous ?",
                     "Choix": [
                         {
-                            "Name": "Mettre en place un plan de nettoyage des plages",
+                            "Name": "Encourager les énergies renouvelables",
                             "Effects": [
-                                { "Cle": "poisson", "Valeur": 8 },
-                                { "Cle": "thermo", "Valeur": 6 }
+                                { "Cle": "thermo", "Valeur": -10 },
+                                { "Cle": "poisson", "Valeur": 5 }
                             ],
-                            "Feedback": "Bravo ! Nettoyer les plages limite l’impact des plastiques sur la faune."
+                            "Feedback": "Excellente initiative ! Réduire les gaz à effet de serre protège les océans et améliore leur santé. (ODD 13: Lutte contre le changement climatique)"
                         },
                         {
-                            "Name": "Ne pas intervenir",
+                            "Name": "Continuer à utiliser des combustibles fossiles",
                             "Effects": [
-                                { "Cle": "poisson", "Valeur": -34 },
-                                { "Cle": "thermo", "Valeur": -15 }
+                                { "Cle": "thermo", "Valeur": 20 },
+                                { "Cle": "poisson", "Valeur": -10 }
                             ],
-                            "Feedback": "Mauvais choix ! Les plastiques continueront de polluer les océans."
+                            "Feedback": "Mauvais choix ! Cela aggrave la désoxygénation des océans et la perte de biodiversité. (ODD 13: Lutte contre le changement climatique)"
                         }
                     ]
                 }
@@ -192,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 { "Cle": "thermo", "Valeur": -42 },
                                 { "Cle": "nivo", "Valeur": 6 }
                             ],
-                            "Feedback": "Très bon choix ! Cela réduit les émissions de gaz à effet de serre."
+                            "Feedback": "Très bon choix ! Cela réduit les émissions de gaz à effet de serre. (ODD 13: Lutte contre le changement climatique)"
                         },
                         {
                             "Name": "Ne rien changer aux pratiques actuelles",
@@ -200,88 +240,35 @@ document.addEventListener('DOMContentLoaded', () => {
                                 { "Cle": "thermo", "Valeur": 10 },
                                 { "Cle": "nivo", "Valeur": -32 }
                             ],
-                            "Feedback": "Mauvaise décision ! Cela accélère la montée des eaux."
+                            "Feedback": "Mauvaise décision ! Cela accélère la montée des eaux. (ODD 13: Lutte contre le changement climatique)"
                         }
                     ]
-                }
-            ]
-        },
-        "coeur": {
-            "Questions": [
+                },
                 {
-                    "Name": "Les coraux blanchissent à cause de l’acidification. Quelle mesure prenez-vous ?",
+                    "Name": "La pollution sonore des océans perturbe les espèces marines. Que proposez-vous ?",
                     "Choix": [
                         {
-                            "Name": "Réduire les émissions de CO₂",
-                            "Effects": [
-                                { "Cle": "ph", "Valeur": 10 },
-                                { "Cle": "poisson", "Valeur": 8 }
-                            ],
-                            "Feedback": "Excellent choix ! Cela protège les récifs coralliens et leur biodiversité."
-                        },
-                        {
-                            "Name": "Ignorer le problème",
-                            "Effects": [
-                                { "Cle": "ph", "Valeur": -24 },
-                                { "Cle": "poisson", "Valeur": -13 }
-                            ],
-                            "Feedback": "Mauvais choix ! Les récifs risquent de disparaître complètement."
-                        }
-                    ]
-                }
-            ]
-        },
-        "foie": {
-            "Questions": [
-                {
-                    "Name": "Une marée noire menace une région. Que décidez-vous ?",
-                    "Choix": [
-                        {
-                            "Name": "Mobiliser une réponse rapide pour limiter les dégâts",
-                            "Effects": [
-                                { "Cle": "poisson", "Valeur": 5 },
-                                { "Cle": "thermo", "Valeur": 7 }
-                            ],
-                            "Feedback": "Bonne décision ! Cela réduit les dommages écologiques."
-                        },
-                        {
-                            "Name": "Ne pas intervenir immédiatement",
-                            "Effects": [
-                                { "Cle": "poisson", "Valeur": -10 },
-                                { "Cle": "thermo", "Valeur": -30 }
-                            ],
-                            "Feedback": "Dommage ! Les habitats marins sont gravement affectés."
-                        }
-                    ]
-                }
-            ]
-        },
-        "rein": {
-            "Questions": [
-                {
-                    "Name": "Les métaux lourds s'accumulent dans les océans. Quelle solution proposez-vous ?",
-                    "Choix": [
-                        {
-                            "Name": "Renforcer les réglementations industrielles",
+                            "Name": "Réguler les activités maritimes pour réduire le bruit",
                             "Effects": [
                                 { "Cle": "poisson", "Valeur": 8 },
-                                { "Cle": "ph", "Valeur": 6 }
+                                { "Cle": "thermo", "Valeur": -2 }
                             ],
-                            "Feedback": "Très bon choix ! Cela limite la pollution des écosystèmes marins."
+                            "Feedback": "Excellent choix ! Réduire la pollution sonore améliore la vie des espèces marines. (ODD 14: Vie aquatique)"
                         },
                         {
-                            "Name": "Ignorer la pollution",
+                            "Name": "Ne rien faire",
                             "Effects": [
-                                { "Cle": "poisson", "Valeur": -42 },
-                                { "Cle": "ph", "Valeur": -15 }
+                                { "Cle": "poisson", "Valeur": -10 },
+                                { "Cle": "thermo", "Valeur": 5 }
                             ],
-                            "Feedback": "Mauvais choix ! Les écosystèmes marins continueront de se dégrader."
+                            "Feedback": "Mauvais choix ! La pollution sonore continue de perturber les écosystèmes marins. (ODD 14: Vie aquatique)"
                         }
                     ]
                 }
             ]
         }
     };
+    
     
 
     const applyEffects = (effects) => {
@@ -351,16 +338,12 @@ document.addEventListener('DOMContentLoaded', () => {
         popup.dataset.currentOrgane = '';
     };
 
-    closePopup.addEventListener('click', () => {
-        closePopupAction();
-    });
+    closePopup.addEventListener('click', closePopupAction);
 
     Object.keys(data).forEach(organe => {
         const div = document.querySelector(`.question.${organe}`);
         if (div) {
-            div.addEventListener('click', () => {
-                openPopup(organe);
-            });
+            div.addEventListener('click', () => openPopup(organe));
         }
     });
 
@@ -371,9 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const playSequentialAnimation = () => {
         questionDivs.forEach(div => div.classList.remove('animate'));
-
         questionDivs[currentIndex].classList.add('animate');
-
         currentIndex = (currentIndex + 1) % questionDivs.length;
     };
 
