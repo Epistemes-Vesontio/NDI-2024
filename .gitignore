@@ -24,3 +24,5 @@
 # debuger
 .vscode/
 /depot/transaction/transaction.csv
+
+/public/potcast/
