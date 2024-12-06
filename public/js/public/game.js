@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Name": "Permettre la pêche sans réglementation",
                             "Effects": [
                                 { "Cle": "poisson", "Valeur": -8 },
-                                { "Cle": "ph", "Valeur": -100 }
+                                { "Cle": "ph", "Valeur": -40 }
                             ],
                             "Feedback": "Mauvaise décision ! Cela accélère l'épuisement des ressources marines. (ODD 14: Vie aquatique)"
                         }
