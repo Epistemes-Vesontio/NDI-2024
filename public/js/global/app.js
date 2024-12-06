@@ -2,22 +2,44 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const createSnowflake = () => {
+    const createSnowflake = (character = '*', speed = 5) => {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
-        snowflake.innerText = '❄️';
+        snowflake.innerText = character;
         snowflake.style.left = Math.random() * 100 + 'vw';
         snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-
+    
         document.body.appendChild(snowflake);
-
-        const animationDuration = Math.random() * 5 + 5;
+    
+        const animationDuration = Math.random() * speed + speed;
         snowflake.style.animationDuration = animationDuration + 's';
-
+    
         setTimeout(() => {
             snowflake.remove();
         }, animationDuration * 1000);
     }
+
+    /* ECLAIR
+    setInterval(() => {
+        createSnowflake('Bim!  BAM! éclaireheh!', 0.05);
+    }, 2000);
+    */
+    /* NEIGE
+    setInterval( () => {
+        createSnowflake();
+    }, 300);
+    */
+    /* PLUIE
+    setInterval(() => {
+        createSnowflake('-', 0.5);
+    }, 10);
+    */
+    /* IL MEULE ET CA GUAUGE
+    setInterval(() => {
+        createSnowflake('o', 0.5);
+    }, 1);
+    */
+    
 
 
     const showPopup = (message) => {
