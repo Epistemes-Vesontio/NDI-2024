@@ -6,12 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ClickerController extends AbstractController
+class GameController extends AbstractController
 {
-    #[Route('/clicker', name: 'app_clicker')]
+    #[Route('/game', name: 'app_game')]
     public function index(): Response
     {
 
-        return $this->render('public/clicker.html.twig');
+        return $this->render('public/game.html.twig');
     }
 }
+

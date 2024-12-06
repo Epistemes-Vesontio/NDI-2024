@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='{{ app.request.locale }}'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episteme | {% block title %}{{ 'public.game.title'|trans }}{% endblock %}</title>
+    <link rel="icon" href="{{ asset('img/Episteme_logo.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/public/game.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/global/themes.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            {{ 'public.game.title'|trans }}
+        </nav>
+    </header>
+
+    <div id="overlay" class="overlay"></div>
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <h3 id="question-title"></h3>
+        <div id="choices"></div>
+        <button id="close-popup">Fermer</button>
+    </div>
+</div>
+
+    
+    <div class="content">
+        <div class="men">
+            <div class="body">
+                <img src="{{ asset('img/aze.svg') }}" alt="Description de l'image">
+                <div class="question poumon"><img src="{{ asset('img/poumon.png') }}" alt="Description"></div>
+                <div class="question estomac"><img src="{{ asset('img/estomac.png') }}" alt="Description"></div>
+                <div class="question cerveau"><img src="{{ asset('img/cerveau.png') }}" alt="Description"></div>
+                <div class="question coeur"><img src="{{ asset('img/coeur.png') }}" alt="Description"></div>
+                <div class="question foie"><img src="{{ asset('img/foie.png') }}" alt="Description"></div>
+                <div class="question rein"><img src="{{ asset('img/rein.png') }}" alt="Description"></div>
+                <div class="life">
+                    <div class="var">
+                        <img src="{{ asset('img/nivo.svg') }}" alt="Description">
+                        <span><p id="nivo"></p>/100</span>
+                    </div>
+                    <div class="var"><img src="{{ asset('img/ph.png') }}" alt="Description"><span><p id="ph"></p>/100</span></div>
+                    <div class="var"><img src="{{ asset('img/poisson.png') }}" alt="Description"><span><p id="poisson"></p>/100</span></div>
+                    <div class="var"><img src="{{ asset('img/thermo.png') }}" alt="Description"><span><p id="thermo"></p>/100</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <h3 id="question-title"></h3>
+            <div id="choices"></div>
+            <button id="close-popup">Fermer</button>
+        </div>
+    </div>
+
+    <div id="end-screen" class="hidden">
+        <h1>Fin du jeu</h1>
+        <div id="recap">
+            <p>Niveau des océans : <span id="recap-nivo"></span></p>
+            <p>pH des océans : <span id="recap-ph"></span></p>
+            <p>Nombre de poissons : <span id="recap-poisson"></span></p>
+            <p>Température : <span id="recap-thermo"></span></p>
+        </div>
+        <button id="restart-game">Rejouer</button>
+    </div>
+ 
+    
+    
+    
+
+    {% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/public/game.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('js/global/themes.js') }}" defer></script>
+        <script type="text/javascript" src="{{ asset('js/global/app.js') }}" defer></script>
+    {% endblock %}
+
+</body>
+</html>

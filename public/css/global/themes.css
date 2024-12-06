@@ -42,6 +42,10 @@
     --alert-bg-color: rgba(255, 69, 0, 0.2);
     --alert-text-color: white;
     --alert-border-color: rgba(255, 69, 0, 0.5);
+    #ecoindex-badge-link {
+        background-color: #474747;
+        color: white;
+    }
 }
 
 .santa {

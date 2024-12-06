@@ -50,6 +50,10 @@ msgstr "Cliqueur"
 msgid "an.error.has.occurred"
 msgstr "Une erreur est survenue"
 
+msgid "public.error.title"
+msgstr "Erreur"
+
+
 #. sideBar privé
 msgid "private.sidebar.signout"
 msgstr "Se déconnecter"
@@ -67,6 +71,11 @@ msgstr "Administration"
 msgid "front.theme_update"
 msgstr "Thème mis à jour"
 
+<<<<<<< HEAD
 #. Meteo Page
 msgid "public.meteo.meteo"
 msgstr "Météo"
+=======
+msgid "public.game.title"
+msgstr "Docteur Maboule"
+>>>>>>> dc7b7e3d7d6e3f4f3247e904505cf6a72ec821bb
