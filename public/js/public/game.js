@@ -38,15 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateIndicators = () => {
-        document.getElementById('nivo').textContent = indicators.nivo;
-        document.getElementById('ph').textContent = indicators.ph;
-        document.getElementById('poisson').textContent = indicators.poisson;
-        document.getElementById('thermo').textContent = indicators.thermo;
+        const nivoReal = indicators.nivo === 100 ? 0 : ((100 - indicators.nivo) / 100) * 10;
+        const phReal = indicators.ph === 100 ? 0 : -3 + (indicators.ph / 100) * 3;
+        const thermoReal = indicators.thermo === 0 ? 5 : (100 - indicators.thermo) / 20;
+        const poissonReal = indicators.poisson;
+
+        document.getElementById('nivo').textContent = nivoReal.toFixed(1) + 'm';
+        document.getElementById('ph').textContent = phReal.toFixed(1);
+        document.getElementById('poisson').textContent = poissonReal + '%';
+        document.getElementById('thermo').textContent = thermoReal.toFixed(1) + '°C';
 
         if (Object.values(indicators).some(value => value <= 0)) {
             showEndScreen();
         }
     };
+
+    
 
     const showEndScreen = () => {
         popup.classList.add('hidden');
@@ -54,55 +61,59 @@ document.addEventListener('DOMContentLoaded', () => {
     
         const getImpactMessage = () => {
             let messages = [];
-    
+
             if (indicators.nivo <= 20) {
                 messages.push("La montée des eaux a submergé de nombreuses zones côtières, causant des migrations massives et la perte de biodiversité terrestre.");
             } else if (indicators.nivo >= 80) {
                 messages.push("Le niveau des océans est stable, offrant des conditions favorables aux écosystèmes côtiers.");
             }
-    
+
             if (indicators.ph <= 20) {
                 messages.push("L'acidité des océans est critique, détruisant les récifs coralliens et menaçant les espèces marines dépendantes.");
             } else if (indicators.ph >= 80) {
                 messages.push("L'acidité des océans est maîtrisée, permettant la régénération des récifs coralliens et des écosystèmes marins.");
             }
-    
+
             if (indicators.poisson <= 20) {
                 messages.push("La biodiversité marine s'est effondrée, mettant en danger la chaîne alimentaire et les communautés dépendantes de la pêche.");
             } else if (indicators.poisson >= 80) {
                 messages.push("La biodiversité marine est florissante, garantissant un écosystème équilibré et résilient.");
             }
-    
+
             if (indicators.thermo >= 80) {
                 messages.push("La température des océans a considérablement augmenté, provoquant le blanchiment des coraux et des conditions hostiles pour de nombreuses espèces marines.");
             } else if (indicators.thermo <= 20) {
                 messages.push("La température des océans est stable, limitant les effets néfastes du changement climatique sur la faune marine.");
             }
-    
+
             return messages.join("<br>");
         };
-    
+
+        const nivoReal = indicators.nivo === 100 ? 0 : ((100 - indicators.nivo) / 100) * 10;
+        const phReal = indicators.ph === 100 ? 0 : -3 + (indicators.ph / 100) * 3;
+        const thermoReal = indicators.thermo === 0 ? 5 : (100 - indicators.thermo) / 20;
+
         const resultMessage = getImpactMessage();
-    
+
         endScreen.innerHTML = `
             <h2>Résumé des indicateurs</h2>
-            <p><strong>Niveau des océans :</strong> ${indicators.nivo}</p>
-            <p><strong>Acidité des océans :</strong> ${indicators.ph}</p>
-            <p><strong>Biodiversité marine :</strong> ${indicators.poisson}</p>
-            <p><strong>Température des océans :</strong> ${indicators.thermo}</p>
+            <p><strong>Niveau des océans monté de</strong> ${nivoReal.toFixed(1)} m</p>
+            <p><strong>Acidité des océans :</strong> ${phReal.toFixed(1)}pH en moins</p>
+            <p><strong>Biodiversité marine </strong> ${indicators.poisson}% restante</p>
+            <p><strong>Température des océans </strong> +${thermoReal.toFixed(1)}°C</p>
             <h3>Impact environnemental :</h3>
             <p>${resultMessage}</p>
             <button id="restart-game">Recommencer</button>
         `;
         endScreen.classList.remove('hidden');
-    
+
         document.body.addEventListener('click', (event) => {
             if (event.target && event.target.id === 'restart-game') {
                 location.reload();
             }
         });
     };
-
+    
     startIntroButton.addEventListener('click', () => {
         introPopup.remove();
     });
