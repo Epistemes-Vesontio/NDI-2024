@@ -17,7 +17,9 @@
  <div id="weather-container">
         <div class="weather-box">
             <div class="top-section">
+                <button id="left-button-date" class="button">Left</button>
                 <div class="date-bar" id="date-bar">Date:</div>
+                <button id="right-button-date" class="button">Right</button>
                 <div class="info-section">
                     <div class="left-element" id="left-element">element</div>
                     <div class="right-element">
@@ -27,7 +29,12 @@
                 </div>
             </div>
             <div class="bottom-section">
-                <canvas id="weather-chart"></canvas>
+                <button id="left-button" class="button">Left</button>
+                <canvas id="temperatureChart" width="300" height="50"></canvas>
+                <canvas id="precipitationChart" width="300" height="50"></canvas>
+                <canvas id="cloudCoverChart" width="300" height="50"></canvas>
+                <canvas id="windChart" width="300" height="50"></canvas>
+                <button id="right-button" class="button">Right</button>
             </div>
         </div>
     </div>
