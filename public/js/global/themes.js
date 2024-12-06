@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    const themes = ['light', 'dark', 'santa', 'clean', 'rain', 'cloudy', 'strom', 'snow'];
+    const themes = ['light', 'dark', 'santa', 'clean', 'rain', 'cloudy', 'storm', 'snow'];
     let currentTheme = localStorage.getItem('theme') || themes[0];
 
     const applyTheme = (theme, bodyElement) => {
