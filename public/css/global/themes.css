@@ -67,7 +67,7 @@
     --alert-border-color: #ff6347;
 }
 
-.blue-sky {
+.clean {
     --header-bg-color: rgba(135, 206, 235, 0.8); /* Sky Blue */
     --header-text-color: white;
     --nav-hover-bg-color: rgba(255, 255, 255, 0.1);

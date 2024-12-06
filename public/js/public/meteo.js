@@ -53,5 +53,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     fetchWeatherData();
-    // localStorage.clear();
+    localStorage.clear();
 });
