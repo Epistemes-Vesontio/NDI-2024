@@ -1,0 +1,65 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}{{ podcast.name }} Podcast{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .podcast-detail > div {
+            margin-bottom: 2rem;
+        }
+        .podcast-videos video,
+        .podcast-audio audio {
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+        .podcast-script iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="podcast-detail">
+        <h1>{{ podcast.name }}</h1>
+
+        {% if podcast.videos|length > 0 %}
+            <div class="podcast-videos">
+                <h2>Videos</h2>
+                {% for video in podcast.videos %}
+                    <video controls width="100%">
+                        <source
+                                src="{{ path('podcast_stream', {podcastName: podcast.name, type: 'video', index: loop.index0}) }}"
+                                type="video/mp4"
+                        >
+                        Your browser does not support the video tag.
+                    </video>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if podcast.audio|length > 0 %}
+            <div class="podcast-audio">
+                <h2>Audio</h2>
+                {% for audio in podcast.audio %}
+                    <audio controls style="width: 100%;">
+                        <source
+                                src="{{ path('podcast_stream', {podcastName: podcast.name, type: 'audio', index: loop.index0}) }}"
+                                type="audio/mp3"
+                        >
+                        Your browser does not support the audio tag.
+                    </audio>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if podcast.script %}
+            <div class="podcast-script">
+                <h2>Script</h2>
+                <embed src="{{ path('podcast_stream', {podcastName: podcast.name, type: 'script'}) }}" width=100% height=600 type='application/pdf'/>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
