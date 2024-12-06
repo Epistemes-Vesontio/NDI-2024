@@ -4,15 +4,14 @@
     align-items: center;
     flex-direction: column;
 
-    margin-left : auto;
-    margin-right : auto;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px; /* Limite la largeur maximale pour les grands écrans */
 
     background-color: var(--header-bg-color);
     color: var(--header-text-color);
-
-    padding: 1%;
-
-    border-radius: 15px;
 }
 
 .weather-box {
@@ -21,36 +20,32 @@
     align-items: center;
     flex-direction: column;
 
-    margin-left : auto;
-    margin-right : auto;
-
+    margin: 0 auto;
     width: 100%;
+    max-width: 600px; /* Limite la largeur maximale pour les grands écrans */
 }
 
 .top-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left : auto;
-    margin-right : auto;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
 }
 
 .date-bar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left : auto;
-    margin-right : auto;
-
-    width: 50%;
-
+    margin: 0 auto;
+    width: 100%;
     padding: 1%;
     border-radius: 15px;
 }
 
 .button {
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 0 2%;
 }
 
 .info-section {
@@ -58,24 +53,49 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-
-    margin-left : auto;
-    margin-right : auto;
-
-    width: 50%;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
 }
+
 .bottom-section {
     padding: 15px;
+    width: 100%;
 }
 
 #right-button {
-    float: right;
+    margin-left: auto; /* Utilise margin-left pour aligner à droite */
+    float: right; /* Utilise float: right pour aligner à droite */
 }
 
 #icon-element img {
     width: 100px;
     height: 100px;
+    max-width: 150px; /* Limite la taille maximale de l'image */
     margin-right: 15px;
+}
 
-    
+canvas {
+    margin: 0 auto;
+    display: block; /* Utilise display: block pour centrer correctement */
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px; /* Limite la largeur maximale pour les grands écrans */
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 600px) {
+    .weather-box, .date-bar, .info-section, canvas {
+        width: 90%;
+    }
+
+    #icon-element img {
+        width: 20vw;
+        height: 20vw;
+        max-width: 100px; /* Limite la taille maximale de l'image */
+    }
+
+    .button {
+        margin: 0 5%;
+    }
 }
