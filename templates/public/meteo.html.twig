@@ -46,13 +46,22 @@
             </div>
         </div>
         <div class="bottom-section">
-            <button id="left-button" class="button">Left</button>
-            <button id="right-button" class="button">Right</button>
-            <canvas id="temperatureChart" width="300" height="150"></canvas>
-            <canvas id="precipitationChart" width="300" height="150"></canvas>
-            <canvas id="cloudCoverChart" width="300" height="150"></canvas>
-            <canvas id="windChart" width="300" height="150"></canvas>
+            <div class="weather-container">        
+                <p>Graphique de Température</p>
+                <canvas id="temperatureChart" width="300" height="150"></canvas>
+            </div>
+
+            <div class="weather-container">
+                <canvas id="precipitationChart" width="300" height="150"></canvas>
+            </div>
+
+            <div class="weather-container">
+                <canvas id="cloudCoverChart" width="300" height="150"></canvas>
+            </div>
+            
+            <div class="weather-container">
+                <canvas id="windChart" width="300" height="150"></canvas>
+            </div>
         </div>
-        <p>Graphique de Température</p>
     </div>
 {% endblock %}

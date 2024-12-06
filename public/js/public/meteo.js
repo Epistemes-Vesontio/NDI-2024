@@ -52,11 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const cloudCoverChart = document.getElementById('cloudCoverChart');
         const windChart = document.getElementById('windChart');
 
-        temperatureChart.style.display = 'block';
-        precipitationChart.style.display = 'none';
-        cloudCoverChart.style.display = 'none';
-        windChart.style.display = 'none';
-
         // Fonction de la température, on affiche une image dans le div #icon-element
         const temperature = JSON.parse(localStorage.getItem('weather_data')).hourly.temperature_2m[0];
         const iconElement = document.getElementById('icon-element');
@@ -260,33 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const precipitationChart = document.getElementById('precipitationChart');
         const cloudCoverChart = document.getElementById('cloudCoverChart');
         const windChart = document.getElementById('windChart');
-
-        switch (index) {
-            case 1:
-                temperatureChart.style.display = 'block';
-                precipitationChart.style.display = 'none';
-                cloudCoverChart.style.display = 'none';
-                windChart.style.display = 'none';
-                break;
-            case 2:
-                temperatureChart.style.display = 'none';
-                precipitationChart.style.display = 'block';
-                cloudCoverChart.style.display = 'none';
-                windChart.style.display = 'none';
-                break;
-            case 3:
-                temperatureChart.style.display = 'none';
-                precipitationChart.style.display = 'none';
-                cloudCoverChart.style.display = 'block';
-                windChart.style.display = 'none';
-                break;
-            case 4:
-                temperatureChart.style.display = 'none';
-                precipitationChart.style.display = 'none';
-                cloudCoverChart.style.display = 'none';
-                windChart.style.display = 'block';
-                break;
-        }
     }
 
     /**
@@ -313,48 +281,9 @@ document.addEventListener('DOMContentLoaded', () => {
         graphCloudCover();
         graphWind();
 
-        switch (index) {
-            case 1:
-                temperatureChart.style.display = 'block';
-                precipitationChart.style.display = 'none';
-                cloudCoverChart.style.display = 'none';
-                windChart.style.display = 'none';
-                break;
-            case 2:
-                temperatureChart.style.display = 'none';
-                precipitationChart.style.display = 'block';
-                cloudCoverChart.style.display = 'none';
-                windChart.style.display = 'none';
-                break;
-            case 3:
-                temperatureChart.style.display = 'none';
-                precipitationChart.style.display = 'none';
-                cloudCoverChart.style.display = 'block';
-                windChart.style.display = 'none';
-                break;
-            case 4:
-                temperatureChart.style.display = 'none';
-                precipitationChart.style.display = 'none';
-                cloudCoverChart.style.display = 'none';
-                windChart.style.display = 'block';
-                break;
-        }
-
         updateUI(data, { latitude: 47.25, longitude: 6.033333 });
         graphButton('right');
     }
-
-    // Gestion des boutons
-    const leftButton = document.getElementById('left-button');
-    const rightButton = document.getElementById('right-button');
-
-    leftButton.addEventListener('click', () => {
-        graphButton('left');
-    });
-
-    rightButton.addEventListener('click', () => {
-        graphButton('right');
-    });
 
     const leftButtonDate = document.getElementById('left-button-date');
     const rightButtonDate = document.getElementById('right-button-date');
