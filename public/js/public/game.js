@@ -218,6 +218,27 @@ document.addEventListener('DOMContentLoaded', () => {
                             "Feedback": "Mauvais choix ! Cela aggrave la désoxygénation des océans et la perte de biodiversité. (ODD 13: Lutte contre le changement climatique)"
                         }
                     ]
+                },
+                {
+                    "Name": "Les déchets de plastique augmentent dans les océans. Quelle action prenez-vous ?",
+                    "Choix": [
+                        {
+                            "Name": "Mettre en place un plan de nettoyage des plages",
+                            "Effects": [
+                                { "Cle": "poisson", "Valeur": 8 },
+                                { "Cle": "thermo", "Valeur": 6 }
+                            ],
+                            "Feedback": "Bravo ! Nettoyer les plages limite l’impact des plastiques sur la faune."
+                        },
+                        {
+                            "Name": "Ne pas intervenir",
+                            "Effects": [
+                                { "Cle": "poisson", "Valeur": -34 },
+                                { "Cle": "thermo", "Valeur": -15 }
+                            ],
+                            "Feedback": "Mauvais choix ! Les plastiques continueront de polluer les océans."
+                        }
+                    ]
                 }
             ]
         },
@@ -266,9 +287,83 @@ document.addEventListener('DOMContentLoaded', () => {
                     ]
                 }
             ]
+        },
+        "coeur": {
+            "Questions": [
+                {
+                    "Name": "Les coraux blanchissent à cause de l’acidification. Quelle mesure prenez-vous ?",
+                    "Choix": [
+                        {
+                            "Name": "Réduire les émissions de CO₂",
+                            "Effects": [
+                                { "Cle": "ph", "Valeur": 10 },
+                                { "Cle": "poisson", "Valeur": 8 }
+                            ],
+                            "Feedback": "Excellent choix ! Cela protège les récifs coralliens et leur biodiversité."
+                        },
+                        {
+                            "Name": "Ignorer le problème",
+                            "Effects": [
+                                { "Cle": "ph", "Valeur": -24 },
+                                { "Cle": "poisson", "Valeur": -13 }
+                            ],
+                            "Feedback": "Mauvais choix ! Les récifs risquent de disparaître complètement."
+                        }
+                    ]
+                }
+            ]
+        },
+        "foie": {
+            "Questions": [
+                {
+                    "Name": "Une marée noire menace une région. Que décidez-vous ?",
+                    "Choix": [
+                        {
+                            "Name": "Mobiliser une réponse rapide pour limiter les dégâts",
+                            "Effects": [
+                                { "Cle": "poisson", "Valeur": 5 },
+                                { "Cle": "thermo", "Valeur": 7 }
+                            ],
+                            "Feedback": "Bonne décision ! Cela réduit les dommages écologiques."
+                        },
+                        {
+                            "Name": "Ne pas intervenir immédiatement",
+                            "Effects": [
+                                { "Cle": "poisson", "Valeur": -10 },
+                                { "Cle": "thermo", "Valeur": -30 }
+                            ],
+                            "Feedback": "Dommage ! Les habitats marins sont gravement affectés."
+                        }
+                    ]
+                }
+            ]
+        },
+        "rein": {
+            "Questions": [
+                {
+                    "Name": "Les métaux lourds s'accumulent dans les océans. Quelle solution proposez-vous ?",
+                    "Choix": [
+                        {
+                            "Name": "Renforcer les réglementations industrielles",
+                            "Effects": [
+                                { "Cle": "poisson", "Valeur": 8 },
+                                { "Cle": "ph", "Valeur": 6 }
+                            ],
+                            "Feedback": "Très bon choix ! Cela limite la pollution des écosystèmes marins."
+                        },
+                        {
+                            "Name": "Ignorer la pollution",
+                            "Effects": [
+                                { "Cle": "poisson", "Valeur": -42 },
+                                { "Cle": "ph", "Valeur": -15 }
+                            ],
+                            "Feedback": "Mauvais choix ! Les écosystèmes marins continueront de se dégrader."
+                        }
+                    ]
+                }
+            ]
         }
     };
-    
     
 
     const applyEffects = (effects) => {
