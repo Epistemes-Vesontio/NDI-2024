@@ -8,7 +8,7 @@ class TranslationMetadataService
 {
     private string $translationDir;
 
-    public function __construct(string $translationDir = "")
+    public function __construct(string $translationDir)
     {
         $this->translationDir = $translationDir;
     }

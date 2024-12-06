@@ -1,0 +1,16 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}Podcasts{% endblock %}
+
+{% block body %}
+    <div class="podcast-list">
+        <h1>Available Podcasts</h1>
+        {% for podcast in podcasts %}
+            <div class="podcast-item">
+                <a href="{{ path('podcast_view', {podcastName: podcast.name}) }}">
+                <h2>{{ podcast.name }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

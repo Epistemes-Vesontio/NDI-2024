@@ -24,3 +24,7 @@ services:
         arguments:
             $translationMetadataService: '@App\Service\TranslationMetadataService'
         tags: [ 'twig.extension' ]
+    # Configure the PodcastService
+    App\Service\PodcastService:
+        arguments:
+            $podcastDirectory: '%kernel.project_dir%/public/podcast'
