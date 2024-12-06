@@ -1,0 +1,40 @@
+{% extends 'public/base.html.twig' %}
+
+{% block title %}{{ 'public.meteo.meteo'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/public/meteo.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/public/meteo.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="weather-container">
+        <div class="weather-box">
+            <div class="top-section">
+                <button id="left-button-date" class="button">Left</button>
+                <div class="date-bar" id="date-bar">Date:</div>
+                <button id="right-button-date" class="button">Right</button>
+            </div>
+            <div class="info-section">
+                <div class="left-element" id="icon-element"></div>
+                <div class="right-element">
+                    <div id="temperature">T°C</div>
+                    <div id="geolocation">LAT: LONG:</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-section">
+            <button id="left-button" class="button">Left</button>
+            <button id="right-button" class="button">Right</button>
+            <canvas id="temperatureChart" width="300" height="150"></canvas>
+            <canvas id="precipitationChart" width="300" height="150"></canvas>
+            <canvas id="cloudCoverChart" width="300" height="150"></canvas>
+            <canvas id="windChart" width="300" height="150"></canvas>
+        </div>
+    </div>
+{% endblock %}

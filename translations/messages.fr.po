@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
-"X-Version: 1.0.1\n"
+"X-Version: 1.0.2\n"
 
 #. Ceci est un exemple de traduction singulier, pluriel
 msgid "You have one new message."
@@ -43,8 +43,8 @@ msgstr "À propos"
 msgid "public.navbar.contact_title"
 msgstr "Contactez-nous"
 
-msgid "public.navbar.clicker_title"
-msgstr "Cliqueur"
+msgid "public.navbar.meteo_title"
+msgstr "Météo"
 
 #. Error Page
 msgid "an.error.has.occurred"
@@ -71,5 +71,8 @@ msgstr "Administration"
 msgid "front.theme_update"
 msgstr "Thème mis à jour"
 
+#. Meteo Page
+msgid "public.meteo.meteo"
+msgstr "Météo"
 msgid "public.game.title"
 msgstr "Docteur Maboule"
