@@ -89,6 +89,12 @@ canvas {
     max-width: 600px; /* Limite la largeur maximale pour les grands écrans */
 }
 
+.theme-container{
+    display : flex;
+    float : left;
+    
+}
+
 /* Media Queries pour les petits écrans */
 @media (max-width: 600px) {
     .weather-box, .date-bar, .info-section, canvas {

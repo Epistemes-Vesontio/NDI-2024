@@ -62,12 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const iconElement = document.getElementById('icon-element');
         if (temperature < 0) {
             iconElement.innerHTML = '<img src="/img/meteo/snowflake.svg" alt="snowflake">';
+            // Changement du thème général dans le local storage
+            localStorage.setItem('theme', 'snow');
+        
         } else if (temperature < 10) {
             iconElement.innerHTML = '<img src="/img/meteo/cloud.svg" alt="cloud">';
+            localStorage.setItem('theme', 'rain');
         } else if (temperature < 20) {
             iconElement.innerHTML = '<img src="/img/meteo/sun.svg" alt="sun">';
+            localStorage.setItem('theme', 'clean');
         } else {
             iconElement.innerHTML = '<img src"/img/meteo/sun.svg" alt="sun">';
+            localStorage.setItem('theme', 'clean');
         }
     }
 
@@ -363,4 +369,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Récupérer les données météorologiques
     fetchWeatherData();
+
+    // Gestion des boutons 
+    const themeButtonSnow = document.getElementById('snow-theme');
+    // Si on clique sur le bouton neige
+    themeButtonSnow.addEventListener('click', () => {
+        // On change le thème
+        localStorage.setItem('theme', 'snow');
+
+        // Rafraichir la page
+        location.reload();
+
+        // On change l'image
+        const iconElement = document.getElementById('icon-element');
+        iconElement.innerHTML = '<img src="/img/meteo/snowflake.svg" alt="snowflake">';
+    });
+
+    const themeButtonRain = document.getElementById('rain-theme');
+    themeButtonRain.addEventListener('click', () => {
+        // On change le thème
+        localStorage.setItem('theme', 'rain');
+
+        // Rafraichir la page
+        location.reload();
+
+        // On change l'image
+        const iconElement = document.getElementById('icon-element');
+        iconElement.innerHTML = '<img src="/img/meteo/cloud.svg" alt="cloud">';
+    });
+
+    const themeButtonClean = document.getElementById('sun-theme');
+    themeButtonClean.addEventListener('click', () => {
+        // On change le thème
+        localStorage.setItem('theme', 'clean');
+
+        // Rafraichir la page
+        location.reload();
+
+        // On change l'image
+        const iconElement = document.getElementById('icon-element');
+        iconElement.innerHTML = '<img src="/img/meteo/sun.svg" alt="sun">';
+    });
+
+    // Theme reset on affiche le theme par défaut
+   const resetButton = document.getElementById('reset-theme');
+    resetButton.addEventListener('click', () => {
+         localStorage.setItem('theme', 'dark');
+         location.reload();
+    });
 });

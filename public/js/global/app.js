@@ -39,6 +39,30 @@ document.addEventListener('DOMContentLoaded', () => {
         createSnowflake('o', 0.5);
     }, 1);
     */
+
+    if(localStorage.getItem('theme') === 'snow'){
+        setInterval(() => {
+            createSnowflake('O', 0.5);
+        }, 300);
+    }
+
+    if (localStorage.getItem('theme') === 'storm') {
+        setInterval(() => {
+            createSnowflake('-', 0.5);
+        }, 10);
+    }
+
+    if (localStorage.getItem('theme') === 'rain') {
+        setInterval(() => {
+            createSnowflake('|', 0.5);
+        }, 1);
+    }
+
+    if (localStorage.getItem('theme') === null) {
+        setInterval(() => {
+            createSnowflake();
+        }, 300);
+    }
     
 
 
